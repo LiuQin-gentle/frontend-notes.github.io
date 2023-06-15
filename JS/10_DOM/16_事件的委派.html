@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <ul id="list">
+        <li><a href="javascript:;">超链接1</a></li>
+        <li><a href="javascript:;">超链接2</a></li>
+        <li><a href="javascript:;">超链接3</a></li>
+    </ul>
+    
+    <script>
+        /* 
+            只绑定一次事件，就可以让所有的超链接，包括当前和未来的超链接都具有这些事件
+            思路：
+
+        */
+       const list = document.getElementById("list");
+       const btn = document.getElementById("btn");
+       
+       const links = document.getElementsByTagName("a");
+
+       document.addEventListener("click", (event) => {
+            if([...links].includes(event.target)){
+                alert(event.target.textContent);
+            }
+       })
+
+       btn.addEventListener("click", ()=>{
+        list.insertAdjacentHTML(
+            "beforeend",
+            "<li><a href='javascript:;'>新超链接</li>"
+        )
+       })
+    </script>
+</body>
+</html>

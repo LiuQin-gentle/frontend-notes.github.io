@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变类型</title>
+    <!-- 
+        原始值是不可变类型，一旦创建就无法修改
+        在内存中不会创建重复的原始值
+
+        对象属于可变类型
+        对象创建后，可以任意添加删除修改对象中的属性
+        当两个对象进行全等比较时，比较的是对象的内存地址
+        如果有两个变量同时指向一个对象，通过一个变量修改对象时，对另一个变量也会产生影响
+     -->
+
+     <script>
+        let obj1 = {name:'孙悟空'}
+        let obj2 = {name:'孙悟空'}
+        console.log(obj1 == obj2)//false
+        console.log(obj1 === obj2)//false
+
+        let obj3 = obj1
+        console.log(obj3 == obj1)//true
+        console.log(obj3 === obj1)//true
+
+        obj1.name = "猪八戒"
+        console.log(obj3.name)//猪八戒
+        console.log(obj2.name)//孙悟空
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

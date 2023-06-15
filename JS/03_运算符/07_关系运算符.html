@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符</title>
+    <script>
+        /* 
+            
+        */
+        let result = 5 < '10';//true
+        result = '1' > false;//true
+        
+        //当关系运算符的两端是两个字符串时，不会将字符串转换为数值，而是逐位比较字符的Unicode编码
+        result = 'a' < 'b';//true
+        result = '12' < '2';// true,相当于比较了‘1’和‘2’的unicode编码
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

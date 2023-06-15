@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的返回值</title>
+    <script>
+        /* 
+            1. 任何值都可以作为返回值使用
+        */
+       function fn1(a){
+            return a
+       }
+       console.log(fn1({name:"孙悟空"}))
+
+       let fn2 = ()=>{console.log("箭头函数")}
+       console.log(fn1(fn2))
+
+       /* 
+        2.如果return后不跟任何值，则相当于返回undefined
+            如果不写return，返回值也是undefined
+       */
+      function fn3(){
+        return
+      }
+      console.log(fn3())
+
+      function fn4(){
+        
+      }
+      console.log(fn4())
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+        #box2{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(197, 196, 255);
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 196, 252);
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <a id="chao" href="https://lilichao.com">超链接</a>
+    <script>
+        /* 
+            在DOm中存在着多种不同类型的事件对象
+                -多种事件对象有一个共同的祖先Event
+                    event.target 触发事件的对象
+                    event.currentTarget 绑定事件的对象，同this
+                    event.stopPropagation() 停止事件的传导
+                    event.preventDefault() 取消默认行为
+                -事件的冒泡（bubble）
+                    事件的冒泡指事件的向上传导
+                    当元素上的某个事件被触发后，其祖先元素上的相同事件也会同时触发
+                    冒泡的存在简化了代码的编写，但是在一些场景下不希望冒泡的存在
+                        可以通过事件对象来取消冒泡
+        */
+       const box1 = document.getElementById("box1");
+       const box2 = document.getElementById("box2");
+       const box3 = document.getElementById("box3");
+       box1.onclick = function(event){
+            //console.log(event.clientX, event.clientY);
+            //box1.textContent = event.clientX + "," + event.clientY;
+            alert("我是box1");
+            console.log(event.target);
+       }
+
+       box2.onclick = function(event){
+            //console.log(event.clientX, event.clientY);
+            //box1.textContent = event.clientX + "," + event.clientY;
+            //event.stopPropagation();
+            alert("我是box2");
+            console.log(event.target);
+       }
+
+       box3.onclick = function(event){
+            //console.log(event.clientX, event.clientY);
+            //box1.textContent = event.clientX + "," + event.clientY;
+            //event.stopPropagation();
+            alert("我是box3");
+            console.log(event.target);
+       }
+
+       const chao = document.getElementById("chao");
+       chao.addEventListener("click", (event) =>{
+            event.preventDefault();//取消默认行为，该超链接不会跳转
+            alert("被点了~");
+       })
+    </script>
+</body>
+</html>

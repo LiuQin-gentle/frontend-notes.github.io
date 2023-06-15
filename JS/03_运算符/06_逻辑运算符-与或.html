@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* 
+            && 与  
+                短路与：第一个值为false，则不看第二个值
+                对于非布尔值进行与运算，它会转换为布尔值然后运算
+                    *如果第一个值为false，直接返回第一个  
+                    *如果第一个值为true，则返回第二个值
+            || 或
+                短路或：第一个值为true，则不看第二个值
+                对于非布尔值进行或运算，它会转换为布尔值然后运算
+                    *如果第一个值为true，直接返回第一个值
+                    *如果第一个值为false，则返回第二个
+
+        */
+
+        let result;
+        result = 10 && 2; //2  
+        result = 10 && 0; //0
+        result = 0 && 2; //0
+        result = 0 && NaN;//0
+
+        //NaN、null与undefined转换为布尔值都是false，因此直接返回第一个值
+        result = NaN && 0;//NaN
+        result = null && 0;//null
+        result = undefined && 0;//undefined
+
+        console.log(result); 
+
+        let res;
+        res = 10 || 2;//10
+        res = 10 || 0;//10
+        res = 0 || 2;//2
+        res = 0 || NaN;//NaN
+
+        res = 0 || NaN;//NaN
+        res = 0 || null;//null
+        res = 0 || undefined;//undefined
+        console.log(res);
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

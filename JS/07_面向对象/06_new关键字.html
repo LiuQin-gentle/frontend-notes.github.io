@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new关键字</title>
+    <script>
+        function Person(name){
+            this.name = name
+        }
+
+        var person = new Person('John');
+        console.log(person);//
+        console.log(person.name);
+
+       /*  var person = Person('John');
+        console.log(person);
+        console.log(person.name); */
+
+        /* 
+            使用new去调函数时，这个函数将会作为构造函数调用
+            使用new调用函数时，将会发生这些事：
+                1. 创建一个普通的JS对象（Object对象{}）
+                2. 将构造函数的prototype属性设置为新对象的原型
+                3. 使用实参来执行构造函数，并且将新对象设置为函数的this
+                4. 如果构造函数返回的是一个非原始值，则该值会作为new运算的返回值返回（千万不要这么做）
+                    如果构造函数的返回值是一个原始值或者没有指定返回值，则新的对象将会作为返回值返回
+        */
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

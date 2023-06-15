@@ -1,0 +1,17 @@
+Rest
+    - REpresentstional State Transfer
+    - 表示层状态的传输
+    - Rest实际上就是一种服务器的设计风格
+    - 它的主要特点是：服务器只返回数据
+    - 服务器和客户端传输数据时通常会使用JSON作为数据格式
+    - 请求的方法：
+        GET    加载数据
+        POST   新建或添加数据
+        PUT    添加或修改数据
+        PATCH  修改数据
+        DELETE 删除数据
+        OPTION 由浏览器自动发送，检查请求的一些权限
+    - API（接口） Endpoint（端点）
+        GET /user
+        POST /user
+        DELETE /user/:id

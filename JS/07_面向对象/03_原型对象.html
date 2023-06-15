@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+    <script>
+        /*
+            对象存储数据的实际区域有两个
+            1.对象自身
+                - 直接通过对象所添加的属性，位于对象自身中
+                - 在类中通过x = y的形式添加的属性
+            2.原型对象
+                - 在对象中会有一个属性用来存储原型对象，这个属性叫__proto__
+                - 原型对象也负责为对象存储属性
+                    访问对象中的属性时，会优先访问对象自身的属性
+                    对象自身不包含该属性时，才会去原型对象中寻找
+                - 会添加到原型对象中的情况
+                    在类中通过XXX(){}方法添加的方法，位于原型中
+                    主动向原型中添加的属性或方法
+        */ 
+       class Person{
+        name = '孙悟空'
+        age = 18
+
+        sayHello(){
+            console.log('我是', this.name)
+        }
+       }
+
+       const p = new Person()
+       console.log(p)
+
+       /* 
+        访问一个对象的原型对象
+            对象.__proto__
+            Object.getPrototypeOf(对象)
+        原型对象中的数据
+            1.对象中的数据（属性、方法等）
+            2.constructor(对象的构造方法)
+            3.__proto__
+        注意：原型对象也有原型，这样就构成了一条原型链，对象的复杂程度不同，原型链的程度也不同
+       */
+       console.log(p.__proto__)
+       //console.log(Object.getPrototypeOf(p) === p.__proto__)//true
+       
+
+       /* 
+        同类型的对象，它们的原型都是同一个，也就意味着，同类型对象的原型链是一样的
+        原型的作用：相当于是一个公开的区域，可以被所有该类实例访问
+            可以将该实例中公共属性（方法）统一存储到原型中
+            这样我们只需要创建一个属性，即可被所有实例访问
+        在对象中有些值是对象独有的，像属性（name,age,gender）每个对象都应该有自己的值，
+            但有些值对于每个对象来说都是一样的，像各种方法，对于一样的值没必要重复的创建
+
+       */
+       class Animal{
+
+       }
+       class Cat extends Animal{
+
+       }
+       class TomCat extends Cat{
+
+       }
+       const cat = new Cat()
+       const tomCat = new TomCat() 
+       console.log(tomCat.__proto__)//Cat实例
+       console.log(cat.__proto__);//Animal实例
+       console.log(cat.__proto__.__proto__);//Object
+
+       /* 
+        函数的原型链:ƒ () { [native code] }
+       */
+      function fn(){
+
+      }
+      console.log(fn.__proto__);
+      console.log(fn.__proto__.__proto__);
+
+      /* 
+        Object的原型链:null
+      */
+      const o = new Object()
+      console.log(o.__proto__);
+    </script>
+</head> 
+
+<body>
+
+</body>
+
+</html>

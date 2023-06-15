@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片按钮</title>
+    <style>
+        /* 
+            当我们第一次使用按钮时，在按钮上会有闪烁的现象出现
+                这是因为，浏览器在加载外部资源时，是以懒加载的形式来完成的
+                像hover active这些图片都是在按钮状态触发时才加载的，网速即使再快也需要时间来加载
+                在图片加载完成之前，超链接处在没有背景图片可以显示的状态，所以会显示空白
+        */
+        a:link{
+            display: block;
+            width: 93px;
+            height: 29px;
+            background: url("./images/link.png");
+        }
+
+        
+        a:hover{
+            background: url("./images/hover.png");
+        }
+
+        a:active{
+            background: url("./images/active.png");
+        }
+    </style>
+</head>
+<body>
+    <a href="#"></a>
+</body>
+</html>

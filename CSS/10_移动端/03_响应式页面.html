@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式页面</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        header{
+            height: 60px;
+            display: flex;
+            background-color: black;
+            color: white;
+            align-items: center;
+            position: relative;
+        }
+        .icon{
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        .top-bar .space{
+            flex: auto;
+        }
+        .user-info{
+            margin-right: 30px;
+        }
+        .user-info svg{
+            width: 25px;
+            height: 25px;
+        }
+        .user-info .login-register{
+            display: none;
+            width: 100vw;
+            height: 60px;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+
+        /* 
+            在出现登录注册div时，上方显示的横条
+        */
+        .user-info .login-register::before{
+            content: "";
+            position: absolute;
+            width: 90%;
+            height: 1px;
+            background-color: #333;
+            top: 0;
+        }
+        .login-register a{
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            flex: auto;
+        }
+        .user-info:active .login-register{
+            display: flex;
+        }
+        .menu{
+            margin-right: 15px
+        }
+
+        .menu svg{
+            width: 25px;
+            height: 25px;
+        }
+
+        .menu .menu-inner{
+            display: none;
+            width: 100vw;
+            background-color: #333;
+            position: absolute;
+            left: 0;
+            top: 60px;
+
+        }
+        .menu .menu-inner a{
+            text-decoration: none;
+            display: flex;
+            color: white;
+            padding: 32px 0;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 40px;
+        }
+        .menu .menu-inner a svg{
+            width: 12px;
+            height: 12px;
+        }
+
+        .menu:active .menu-inner{
+            display: block;
+        }
+
+        @media (min-width: 800px) {
+            .menu .icon,
+            .user-info .icon{
+                display: none;
+            }
+
+            .top-bar .user-info .login-register{
+                display: flex;
+                width: auto;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+                position: static;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .user-info .login-register a:hover{
+                color: #ff6700;
+            }
+
+
+            .top-bar .menu .menu-inner{
+                display: flex;
+                position: static;
+                width: auto;
+                background-color: black;
+            }
+
+            .menu .menu-inner a {
+                display: block;
+                font-weight: bold;
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .top-bar{
+                justify-content: space-around;
+            }
+
+            .menu .menu-inner a:hover{
+                color: #ff6700;
+            }
+
+            .top-bar .space{
+                display: none;
+            }
+
+            .top-bar .menu{
+                order: 2;
+            }
+
+            .top-bar .user-info{
+                order: 3;
+            }
+
+            .top-bar .menu a,
+            .top-bar .user-info a{
+                margin: 0 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        响应式布局
+            -指网页会根据窗口大小的改变而改变
+            -响应式布局，可以使得一个页面同时在多种设备中使用，并且有一个较好的体验，降低开发成本
+            -但是这种响应式页面，适合内容比较简单的页面
+                 如果是内容多的，布局复杂的页面还是建议pc端一套，移动端一套
+            -响应式布局主要就是借助媒体查询来实现的
+            -编写的原则
+                 1. 移动优先
+                 2. 渐进增强
+                        确认断点
+     -->
+     <header class="top-bar">
+        <div class="icon">
+            <a href="#">
+            <svg data-v-777bda80="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 808 808" class="mi-logo"><g data-v-777bda80=""><path data-v-777bda80="" fill="#ff6900" d="M723.79,84.42C647.55,8.48,537.94,0,404,0,269.89,0,160.12,8.58,83.92,84.72S0,270.43,0,404.39,7.74,648,84,724.14,269.9,808,404,808s243.85-7.71,320-83.86,84-185.78,84-319.75C808,270.25,800.16,160.54,723.79,84.42Z"></path> <path data-v-777bda80="" fill="#fff" d="M374.26,553.72a5,5,0,0,1-5.06,5H300.3a5.05,5.05,0,0,1-5.12-5V373.53a5.05,5.05,0,0,1,5.12-5h68.9a5,5,0,0,1,5.06,5Z"></path> <path data-v-777bda80="" fill="#fff" d="M509.18,553.72a5.05,5.05,0,0,1-5.09,5H438.5a5,5,0,0,1-5.1-5V398.26c-.07-27.15-1.62-55-15.64-69.06-12-12.09-34.51-14.86-57.88-15.44H241a5,5,0,0,0-5.07,5v235a5.07,5.07,0,0,1-5.12,5H165.16a5,5,0,0,1-5.06-5V254.31a5,5,0,0,1,5.06-5H354.52c49.49,0,101.22,2.26,126.74,27.81s27.92,77.3,27.92,126.85Z"></path> <path data-v-777bda80="" fill="#fff" d="M644.29,553.72a5.06,5.06,0,0,1-5.09,5H573.57a5,5,0,0,1-5.08-5V254.31a5,5,0,0,1,5.08-5H639.2a5.06,5.06,0,0,1,5.09,5Z"></path></g></svg>
+            </a>
+        </div>
+        <div class="space"></div>
+        <div class="user-info">
+            <a href="#">
+                <svg t="1683859683644" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2420" width="30" height="30"><path d="M704 329.152C704 209.365333 622.848 128 512 128s-192 81.365333-192 201.152C320 454.762667 407.146667 554.666667 512 554.666667s192-99.904 192-225.514667z m42.666667 0C746.666667 476.714667 642.176 597.333333 512 597.333333s-234.666667-120.618667-234.666667-268.181333C277.333333 181.546667 381.824 85.333333 512 85.333333s234.666667 96.213333 234.666667 243.818667zM512.106667 640c408.96 0 404.864 256.512 404.864 256.512 3.093333 23.274667-13.482667 42.154667-37.098667 42.154667H144.32c-23.573333 0-41.088-19.136-37.077333-42.154667 0 0-4.096-256.512 404.864-256.512zM149.909333 896l0.064 3.861333-0.704 3.968c0.682667-3.882667-2.837333-7.829333-4.949333-7.829333H879.872c-2.154667 0-5.504 3.818667-5.205333 6.144l-0.426667-3.157333 0.064-3.157334c0-0.853333-0.128-3.349333-0.533333-7.125333a161.813333 161.813333 0 0 0-4.266667-23.082667 192.96 192.96 0 0 0-35.242667-71.104C780.330667 725.461333 678.634667 682.666667 512.106667 682.666667c-166.549333 0-268.224 42.794667-322.176 111.850666a192.96 192.96 0 0 0-35.242667 71.104c-2.176 8.426667-3.541333 16.192-4.266667 23.082667a81.045333 81.045333 0 0 0-0.512 7.296z" fill="#ffffff" p-id="2421"></path></svg>
+            </a>
+            <div class="login-register">
+                <a href="#">登录</a><span>|</span>
+                <a href="#">注册</a>
+            </div>
+        </div>
+        <div class="menu">
+            <svg t="1683859774476" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3600" width="30" height="30"><path d="M921.6 768a51.2 51.2 0 0 1 0 102.4H102.4a51.2 51.2 0 0 1 0-102.4h819.2z m0-204.8a51.2 51.2 0 0 1 0 102.4H102.4a51.2 51.2 0 0 1 0-102.4h819.2z m0-204.8a51.2 51.2 0 0 1 0 102.4H102.4a51.2 51.2 0 1 1 0-102.4h819.2z m0-204.8a51.2 51.2 0 0 1 0 102.4H102.4a51.2 51.2 0 1 1 0-102.4h819.2z" p-id="3601" fill="#ffffff"></path></svg>
+            <ul class="menu-inner">
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>小米官网</span>
+                        <svg t="1683861623214" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4120" width="16" height="16"><path d="M243.836541 15.36a41.679568 41.679568 0 0 1 58.713945 0L772.220541 482.387027c8.205838 8.164324 12.260324 18.902486 12.163459 29.612973a41.029189 41.029189 0 0 1-12.163459 29.585297L302.550486 1008.64a41.679568 41.679568 0 0 1-58.713945 0 41.126054 41.126054 0 0 1 0-58.395676L684.571676 512 243.822703 73.728a41.126054 41.126054 0 0 1 0-58.381838z" fill="#bfbfbf" p-id="4121"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+     </header>
+</body>
+</html>

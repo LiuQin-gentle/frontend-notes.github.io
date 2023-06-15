@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: bisque;
+            position: absolute;
+        }
+        #box2{
+            width: 350px;
+            height: 350px;
+            background-color: rgb(230, 138, 26);
+        }
+        #box3{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 186, 160);
+        }
+        #box4{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(125, 106, 235);
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box2"></div>
+    <div id="box1"></div>
+
+    <!-- 
+        点击box4的时候，3也会被触发
+        事件的冒泡和元素的样式无关，只和结构有关
+     -->
+    <div id="box3" onclick="alert(3)">
+        <div id="box4" onclick="alert(4)"></div>
+    </div>
+    <script>
+        /* 
+            
+        */
+       const box1 = document.getElementById("box1");
+       const box2 = document.getElementById("box2");
+       document.onmousemove = function(event){
+            box1.style.left = event.clientX + "px";
+            box1.style.top = event.clientY + "px";
+       }
+
+       box2.addEventListener("mousemove", event => {
+            event.stopPropagation();//取消冒泡
+       })
+    </script>
+</body>
+</html>

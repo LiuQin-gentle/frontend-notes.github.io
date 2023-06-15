@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <button id="btn2">点我一下~</button>
+    <script>
+        /* 
+            消息队列
+            -消息队列负责存储将要执行的函数
+            -当我们触发一个事件时，其响应函数并不是直接就添加到调用栈中的
+                因为调用栈中有可能会存在一些还没有执行完的代码
+            -事件触发后，JS引擎是将事件响应函数插入到消息队列中排队
+
+        */
+        function fn() {
+            let a = 10;
+            let b = 20;
+            function fn2() {
+                console.log("fn2~");
+            }
+            fn2();
+            console.log("fn~");
+        }
+        fn();
+        console.log(1111);
+
+        const btn = document.getElementById("btn");
+        const btn2 = document.getElementById("btn2");
+        btn.onclick = function () {
+            alert(111);
+            const begin = Date.now();
+            while (Date.now() - begin < 3000) {
+                
+            }
+        }
+
+        btn2.onclick = function () {
+            alert(222);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性</title>
+    <script>
+        /* 
+            使用symbol添加的属性，通常是那些不希望被外界访问的属性
+        */
+       let obj = Object()
+       obj.name = "刘琴"
+       obj.age = 25
+       //obj.gender = "女"
+       obj["gender"] = "女"
+
+        console.log(obj)
+
+        let symbol = Symbol()
+        obj[symbol]= "通过symbol添加的属性"
+        console.log(obj)
+        console.log(obj[symbol])
+
+        console.log("name" in obj)//检查obj中是否有name属性
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

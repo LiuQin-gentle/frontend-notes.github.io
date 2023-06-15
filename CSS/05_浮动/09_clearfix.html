@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 10px solid tomato;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            float: left;
+        }
+        /* 加一个不显示在页面的box3调整样式，虽然实现了，但是是用html解决了css的问题 */
+        /* .box3{
+            clear: both;
+        } */
+
+        /* 用伪类更合适 因为默认的是行内元素，要改成块元素*/
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+        <!-- <div class="box3">box3</div> -->
+    </div>
+</body>
+</html>

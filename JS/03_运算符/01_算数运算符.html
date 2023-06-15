@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算数运算符</title>
+    <script>
+        /* 
+            除法不会取整
+            ** 幂运算
+            % 取模
+            注意：
+                算数运算时，除了字符串的加法，其他运算的操作数是非数值时，都会转换为数值然后再运算
+        */
+       let a = 9 ** .5 //开方，结果为3
+       console.log(a);
+
+       /* 
+        JS是一门弱类型语言，当进行运算时会通过自动的类型转换来完成运算
+       */
+       a = 10 - '5';//5
+       console.log(a)
+
+       a = 10 + true;//10 + 1
+       a = 5 + null;//5 + 0
+       a = 5 + undefined;//5 + NaN
+
+       //特殊情况，字符串加法，会进行字符串拼接
+       /* 
+        可以通过任意类型加一个空串的形式来将其转换为字符串，其原理和String()函数相同
+       */
+       a = '5' + 10;//510
+       console.log(a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: saddlebrown;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        /* 
+            position
+                用来设置元素的定位方式
+                可选值
+                    static 默认值，元素未开启定位
+                    relative 开启元素的相对定位
+                    absolute 开启元素的绝对定位
+                    fixed 开启元素的固定定位
+                    sticky 开启元素的粘滞定位
+
+            相对定位特点
+                1. 开启相对定位而不设置元素的偏移量，此时元素不会发生任何变化
+                2. 开启相对定位不会使元素脱离文档流，不会改变元素的性质
+                3. 相对定位元素是参照其原来的位置进行定位的
+                4. 相对定位会提升元素的层级
+                
+            偏移量
+                开启了定位的元素可以通过偏移量来设置元素的位置
+                偏移量一共有四个
+                    top  元素上边距离定位位置（元素原来的位置）上边的距离
+                    bottom  元素下边距离定位位置下边的距离
+                    left
+                    right
+                偏移量通常只使用两个即可定位一个元素的位置
+        */
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: sandybrown;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

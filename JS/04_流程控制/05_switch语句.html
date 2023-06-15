@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch语句</title>
+    <script>
+        /* 
+            switch语句：
+                执行流程
+                -switch语句在执行时，会依次将switch后的表达式和case后的表达式进行全等比较
+                -当比较结果为true时，会从当前case处开始执行代码，也就是说case是代码执行的起始位置
+            
+        */
+       //根据用户输入的数字显示中文
+       let num = +prompt("请输入一个数字");
+       switch(num){
+            default: alert("no");break;
+            case 1: alert("壹");break;
+            case 2: alert("贰");break;
+            case 3: alert("叁");break;
+            
+       }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

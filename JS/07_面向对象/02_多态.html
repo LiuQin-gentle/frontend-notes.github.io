@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多态</title>
+    <script>
+        
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        class Dog {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        function sayHello(obj){
+            console.log('你好', obj.name);
+        }
+
+        const dog = new Dog('旺财');
+        const person = new Person('孙悟空');
+        sayHello(dog)
+        sayHello(person)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

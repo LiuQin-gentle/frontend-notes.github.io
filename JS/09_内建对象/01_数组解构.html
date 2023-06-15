@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组解构</title>
+    <script>
+        const arr = ['孙悟空', '猪八戒', '沙和尚'];
+
+        let [a, b, c] = arr;//解构赋值
+        console.log(a, b, c);
+
+        let [d, e, f, g] = ['唐僧', '白骨精', '蜘蛛精', '玉兔精'];
+        console.log(d, e, f, g);
+
+        //[d, e, f, g] = [1, 2, 3];
+        //console.log(d, e, f, g);//1 2 3 undefined
+
+        [d, e, f, g=g] = [1, 2, 3];
+        console.log(d, e, f, g);//注释17,18行，得到结果  1 2 3 玉兔精  g的值保留
+    
+        //解构数组时，可以使用...来设置获取多余的元素
+        let [n1, n2, ...n3] = [4, 5, 6, 7];
+        console.log(n1, n2, n3);// 4 5 [6, 7]
+
+        function fn() {
+            return ['二郎神', '哮天犬'];
+        }
+        let [name1, name2] = fn();
+        console.log(name1, name2);
+
+        //快速交换两个变量的值
+        let a1 = 10, a2 = 20;
+        [a1, a2] = [a2, a1];//等号左边表示要解构赋值，等号右边表示新建了一个数组
+        console.log(a1, a2);
+
+        const arr2 = [['孙悟空', 18, '男'], ['猪八戒', 28, '男']];
+        let [[name, age, gender], arr3] = arr2;
+        console.log(name, age, gender);
+        console.log(arr3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

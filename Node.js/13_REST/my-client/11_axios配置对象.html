@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Axios配置对象</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <script>
+        document.getElementById("btn").onclick = () => {
+            //直接调用axios(config)发送请求
+            axios({
+                //baseURL 指定服务器的根目录（路径的前缀）
+                baseURL:"http://localhost:3000",
+                //请求地址
+                url:"student",
+                //请求方法，默认是get
+                method:"get",
+                //url:"http://localhost:3000/student",
+                //请求体
+                //data:"name=swk&age=16"
+                data:{
+                    name:"swk",
+                    age:18,
+                    gender:"男",
+                    address:"火锅山"
+                },
+                //params 指定路径中的查询字符串
+                params:{
+                    id:1
+                },
+                //timeout 过期时间
+                //timeout:1000, 1s以后自动取消
+
+                //用来终止请求
+                //signal,
+
+                //transformRequest 可以用来处理请求数据（data）
+                //它需要一个数组作为参数，数组可以接收多个参数，请求发送时多个函数会按照顺序执行
+                //函数在执行时，会接收到两个参数data和headers
+                /* transformRequest:[
+                    function(data, headers) {
+                        //可以在函数中对data和headers进行修改
+                        data.name = "猪八戒"
+                        headers["Content-Type"] = "application/json"
+                        console.log(headers, data);
+                        return data//这里设置返回值，下一个函数才能拿到data
+                    }, function (data, header) {
+                        // 最后一个函数必须返回一个字符串，才能使得数据有效
+                        return JSON.stringify(data);
+                    }
+                ] */
+            }).then((res) => {
+                //由服务器提供的响应数据
+                console.log(res.data);
+                //axios默认只会在响应状态为2xx才会调用then
+                console.log(res.status);
+                //来自服务器响应的 HTTP 状态信息
+                console.log(res.statusText);
+                // `headers` 是服务器响应头
+                // 所有的 header 名称都是小写，而且可以使用方括号语法访问
+                // 例如: `response.headers['content-type']`
+                console.log(res.headers);
+                // `config` 是 `axios` 请求的配置信息
+                console.log(res.config);
+
+                // `request` 是生成此响应的请求
+                // 在node.js中它是最后一个ClientRequest实例 (in redirects)，
+                // 在浏览器中则是 XMLHttpRequest 实例
+                console.log(res.request);
+            }).catch((err) => {
+                console.log("出错了",err);
+            })
+        }
+    </script>
+</body>
+</html>

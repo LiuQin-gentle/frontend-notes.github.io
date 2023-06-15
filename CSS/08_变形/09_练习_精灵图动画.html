@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习-精灵图动画</title>
+    <style>
+        .box1{
+            width: 132px;
+            height: 271px;
+            background: url("./images/bigtap-mitu-queue-big.png") 0 0;
+            animation: move 1s steps(4) infinite;
+        }
+        @keyframes move {
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -528px 0;/* 注意：这里是精灵图的末尾 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

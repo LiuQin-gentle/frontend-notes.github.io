@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画2</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            animation: move 6s 2s steps(2);/* 有三次过渡，跳3*2=6次 */
+        }
+        @keyframes move {
+            from{
+                margin-left: 50px;
+                background-color: #bfa;
+            }
+
+            50%{
+                margin-left: 200px;
+                background-color: yellow;
+            }
+
+            75%{
+                margin-left: 300px;
+                background-color: yellowgreen;
+            }
+
+            to{
+                margin-left: 500px;
+                background-color: orange;
+            }
+        }
+
+        body:hover .box1{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

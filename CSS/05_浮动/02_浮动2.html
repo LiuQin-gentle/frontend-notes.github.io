@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            background-color: tomato;
+            float: left;
+        }
+        /* 
+            浮动后，之前的布局等式就失效了
+            元素脱离文档流后的特点
+                块元素：
+                    1.块元素不再单独占一行，而是水平排列
+                    2.高度和宽度都被内容撑开
+                行内元素：
+                    设置浮动后，行内元素可以设置宽度和高度
+        */
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            float: left;
+        }
+        span{
+            width: 200px;
+            height:200px;
+            background-color: salmon;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        我是div1
+    </div>
+    <div class="box2">
+        我是div2
+    </div>
+    <span>我是一个小span</span>
+</body>
+</html>

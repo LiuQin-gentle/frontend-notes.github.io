@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const list = document.getElementById("list");
+            const addBtn = document.getElementById("add");
+            addBtn.onclick = function(){
+                const newLi = document.createElement("li");
+                newLi.id = "ts";
+                newLi.textContent = "唐僧";
+
+                //1.appendChild() 用于给一个节点添加子节点
+                //list.appendChild(newLi);
+
+                //2.insertAdjacentElement() 可以向元素的任意位置添加元素
+                //两个参数：1.要添加的位置；2.要添加的元素
+                //beforend 标签的最后 afterbegin 标签的开始
+                //beforbegin 在元素的前边插入（兄弟元素） afterend 在元素的后边插入（兄弟元素）
+                //list.insertAdjacentElement("beforend", newLi);
+
+                //3.insertAdjacentHTML()
+                list.insertAdjacentHTML("beforeend", "<li id='bgj'>白骨精</li>")
+
+            }
+
+            const replaceBtn = document.getElementById("replace");
+            replaceBtn.onclick = function(){
+                const li = document.createElement("li");
+                li.id = "zzj";
+                li.textContent = "蜘蛛精";
+
+                const swk = document.getElementById("swk");
+
+                //replaceWith() 使用一个元素替换当前元素
+                swk.replaceWith(li);
+            }
+
+            const delBtn = document.getElementById("delete");
+            delBtn.onclick = function(){
+                const zbj = document.getElementById("zbj");
+                //remove() 删除当前元素
+                zbj.remove();
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button id="add">添加元素</button>
+    <button id="replace">替换孙悟空</button>
+    <button id="delete">删除猪八戒</button>
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="shs">沙和尚</li>
+    </ul>
+</body>
+</html>

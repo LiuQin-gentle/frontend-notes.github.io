@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商品卡片</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #333;
+            font:13px/1.5 Helvetica Neue,Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif
+        }
+        a{
+            text-decoration: none;
+        }
+        .card{
+            box-sizing: border-box;
+            width: 400px;
+            height: 450px;
+            padding: 20px 0;
+            background-color: rgba(244,244,244);
+            text-align: center;
+            margin: 100px auto;
+        }
+        .img-wrapper{
+            width: 231px;
+            height: 160px;
+            margin: 0 auto;
+        }
+        .img-wrapper img{
+            vertical-align: top;
+            width: 100%;
+        }
+        .card h3{
+            margin-top: 18px;
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
+        }
+        .card .desc{
+            margin: 2px 0 10px;
+            color: gray;
+            font-size: 12px;
+        }
+        
+        .price span{
+            color: #ff6700;
+            font-size: 14px;
+        }
+
+        .price del{
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="./images/computer.jpg">
+        </div>
+        
+        <h3>小米笔记本Pro X 14</h3>
+        <p class="desc">高能旗舰 轻薄力作</p>
+        <p class="price">
+            <span>6999元</span>
+            <del>7999元</del>
+        </p>
+        
+    </div>
+</body>
+</html>

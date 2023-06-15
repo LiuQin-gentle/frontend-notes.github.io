@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雪碧图</title>
+    <style>
+        /* 
+            当我们第一次使用按钮时，在按钮上会有闪烁的现象出现
+                这是因为，浏览器在加载外部资源时，是以懒加载的形式来完成的
+                像hover active这些图片都是在按钮状态触发时才加载的，网速即使再快也需要时间来加载
+                在图片加载完成之前，超链接处在没有背景图片可以显示的状态，所以会显示空白
+        */
+        /* 
+            可以通过CSS-Sprite来解决这个问题
+                CSS-Sprite就是指将多个小的图片同意放到一个大图片（雪碧图）中，然后通过偏移量来切换不同的图片
+                使用CSS-Sprite可以将多个小图片进行整合，减少客户端发送请求的次数，提升用户体验
+                在早期的网页中，几乎所有的小图标都是通过雪碧图来实现的，随着图标字体的广泛应用，雪碧图的使用也变得相对少了一些
+            雪碧图（CSS-Sprite）
+                1. 雪碧图是位图，位图放大后会失真
+                2. 雪碧图无法修改颜色
+                3. 雪碧图支持彩色图标
+            图标字体（iconfont）
+                1. 图标字体是矢量图，可以任意放大缩小不会失真
+                2. 图标字体可以任意修改颜色
+                3. 图标字体只支持单色图标
+
+            雪碧图制作网站：https://alloyteam.github.io/gopng/
+        */
+        a:link{
+            display: block;
+            width: 93px;
+            height: 29px;
+            background: url("./images/btn.png") 0 0;
+        }
+
+        
+        a:hover{
+            background: url("./images/btn.png") -93px 0;
+        }
+
+        a:active{
+            background: url("./images/btn.png") -186px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#"></a>
+</body>
+</html>

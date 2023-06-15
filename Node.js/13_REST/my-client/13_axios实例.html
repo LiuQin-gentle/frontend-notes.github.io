@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Axios实例</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <script>
+        axios.defaults.baseURL = "http://localhost:3000";
+        axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`;
+        
+        // axios实例相当于是axios的一个副本，它的功能和axios一样
+        // axios的默认配置在实例也同样会生效
+        //  但是我可以单独修改axios实例的默认配置
+        const instance = axios.create({
+            baseURL:"http://localhost:4000"
+        })
+
+        // const instance = axios.create()
+        // instance.defaults.baseURL = "xxx"
+
+        document.getElementById("btn").onclick = () => {
+            instance.get("student")
+            .then((res) => {
+                console.log(res.data);
+            }).catch((err) => {
+                console.log("出错了",err);
+            })
+        }
+    </script>
+</body>
+</html>

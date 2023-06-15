@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            默认情况下，背景颜色会延伸到内边距上 
+            一个元素的可见框大小由内容区、内边距和边框共同决定
+
+            盒子模型（box model）
+            每一个盒子，都由以下几部分组成
+            -内容区（content）
+                内容区在元素最内部，用来容纳子元素
+                内容区的大小由width和height设置
+            -内边距（padding）
+                内容区和边框之间的距离
+            -边框（border）
+                边框是盒子边界，离开边框就属于盒子外部了
+                边框会影响盒子可见框大小
+            -外边距（margin）
+                盒子与盒子之间的距离
+                由于浏览器默认是按照自左向右，自上向下的顺序来排列元素的
+                    所以当设置上和左外边距时，是改变元素自身的位置
+                    但是设置右和下外边距时，会改变其他元素的位置
+                margin不会改变元素可见框的大小，但是会改变实际占用大小
+                -外边距折叠
+                    垂直方向的相邻外边距会发生外边距折叠现象
+                        兄弟元素间外边距会取较大值（避免两个元素之间的距离太远）
+                        父子元素间子元素的外边距会传递给父元素
+                            解决方案：
+                            1. 在父元素加内边距
+                            2. 使元素不相邻
+                        */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地存储</title>
+</head>
+<body>
+    <button id="btn01">存</button>
+    <button id="btn02">取</button>
+    <script>
+        /* 
+            setItem()用来存储数据
+            getItem()用来获取数据
+            removeItem()删除数据
+            clear(）清空数据
+        */
+        btn01.onclick = () => {
+            sessionStorage.setItem("name", "孙悟空");
+            sessionStorage.setItem("age", "18");
+            sessionStorage.setItem("gender", "男");
+            sessionStorage.setItem("address", "花果山");
+        }
+        btn02.onclick = () => {
+            console.log(sessionStorage.getItem("name")); 
+            console.log(sessionStorage.getItem("age")); 
+            console.log(sessionStorage.getItem("gender")); 
+            console.log(sessionStorage.getItem("address")); 
+        }
+    </script>
+</body>
+</html>

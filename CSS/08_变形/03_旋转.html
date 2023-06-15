@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 200px auto;
+            transition: all 3s;/* 元素放大缩小时有过渡的效果 */
+            /* 
+                transform-origin 指定变形的原点
+            */
+            transform-origin: top center;
+        }
+        .box1:hover{
+            /* 
+                rotateX 沿x轴旋转
+                rotateY 沿y轴旋转
+                rotateZ 沿z轴旋转
+
+                单位
+                    deg 度
+                    turn 圈
+            */
+            transform: rotateZ(10turn);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

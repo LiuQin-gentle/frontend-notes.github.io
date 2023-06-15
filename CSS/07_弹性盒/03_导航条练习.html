@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航条</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            display: flex;
+            list-style: none;       
+        }
+        .nav{
+            width: 1210px;
+            height: 48px;
+            align-items: center;     
+            background-color: rgba(232,231,227);
+            margin: 100px auto;
+        }
+        .nav li{
+            text-align: center;
+            flex: auto; 
+        }
+
+        .nav a {
+            display: block;
+            line-height: 48px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgba(119,119,119);
+            
+        }
+
+        .nav a:hover{
+            background-color: rgba(63,63,63);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+    <!-- 
+        遇到的问题和解决方案
+        1. 怎么去掉ul默认的列表样式
+            list-style: none; 
+        2. 怎么让li横向排列
+            display: flex;//设置为弹性布局  
+        3. 怎么去掉a标签的下划线和修改文字颜色
+            text-decoration: none;
+            color: rgba(119,119,119);
+        4. 怎么让a标签文字垂直居中
+            display: block;
+            line-height: 48px;//这里的高度要跟li一致
+        5. 怎么让li均匀分布在ul中
+            flex: auto;//auto 相当于 1 1 auto  生长为1；收缩为1；basis为auto
+     -->
+</body>
+</html>

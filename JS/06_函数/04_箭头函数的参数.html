@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的参数</title>
+    <script>
+        /* 
+            1.箭头函数只有一个参数时可以省略小括号
+        */
+       const fn1 = a => {
+        console.log(a)
+       }
+       fn1(12)
+
+       /* 
+            2.定义参数时可以指定参数的默认值
+                -默认值在没有对应实参时生效
+       */
+      const fn2 = (a=1, b=2, c=20) => {
+        console.log(a,b,c);
+      }
+      fn2(10,20)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

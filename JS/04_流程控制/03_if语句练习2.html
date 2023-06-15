@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if语句练习2</title>
+    <script>
+         /* 
+             -练习2:
+                从键盘输入小明的期末成绩:
+                当成绩为100时,"奖励一辆BM"
+                当成绩为[8o-99]时,“奖励一台iphone"当成绩为[60-79]时,"奖励一本参考书"其他时，什么奖励也没有
+         
+         */
+         let grade = parseInt(prompt("请输入小明的期末成绩："));
+         if(isNaN(grade) || grade < 0 || grade > 100){
+            alert("请输入合法的成绩");
+         }else{
+            if(grade === 100){
+                alert("奖励一辆BM");
+            }else if(grade >= 80){
+                alert("奖励一台iphone");
+            }else if(grade >= 60){
+                alert("奖励一本参考书");
+            }else{
+                alert("没有奖励");
+            }
+         }
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

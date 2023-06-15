@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字面量和变量</title>
+    <script>
+        /*
+            字面量就是一个值，代表的含义就是字面意思
+            如：1 2 3 100 “hello” true null    
+            
+            变量
+            -变量可以用“存储”字面量
+            -并且变量中存储的字面量可以随意的修改
+            -通过变量可以对字面量进行描述，并且变量比较方便修改
+
+            声明变量用var或者let，let声明的范围是块作用域，而var声明的范围是函数作用域
+        */
+       if(true){
+        var name = 'Matt';
+        console.log(name);//Matt
+       }
+       console.log(name);//Matt
+
+       if(true){
+        let name2 = 'Lucia';
+        console.log(name2);//Lucia
+       }
+       console.log(name2);//报错：Uncaught ReferenceError ReferenceError: name2 is not defined
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

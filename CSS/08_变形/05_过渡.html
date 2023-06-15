@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6,.box7{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            margin-top: 10px;
+            /* 
+                transition-property
+                    -应用过渡效果的属性
+                    -all 表示所有样式
+                transition-duration
+                    -过渡效果所花费的时间
+                    -单位
+                        s 秒
+                        ms 毫秒
+                transition-delay
+                    -过渡效果的延时
+                transition-timing-function
+                    -指定过渡的时间的曲线
+                    -可选值
+                        ease 默认值，先加速然后减速
+                        linear 匀速
+                        ease-in 加速
+                        ease-out 减速
+                        贝塞尔曲线 自定义运动方式cubic-bezier(.42,1.56,1,-1.37)
+                        steps() 分布执行动画
+                transition 过渡的简写属性
+                    duration 和 delay的顺序有先后，先写duration，再写delay
+
+            */
+            transition-property: width, background-color, margin-left;
+            transition-duration: 5000ms, 10s, 3s;
+            /* transition-delay: 1s; */
+        }
+
+        .box2{
+            background-color: saddlebrown;
+            transition-timing-function: linear;
+        }
+
+        .box3{
+            background-color: skyblue;
+            transition-timing-function: ease-in;
+        }
+
+        .box4{
+            background-color: brown;
+            transition-timing-function: ease-out;
+        }
+
+        .box5{
+            background-color: darkcyan;
+            transition-timing-function: cubic-bezier(.42,1.56,1,-1.37);
+        }
+
+        .box6{
+            background-color: palevioletred;
+            transition-timing-function: step-end;
+        }
+
+        .box7{
+            background-color: lavender;
+            transition-timing-function: steps(3);
+        }
+        body:hover .box1{
+            /* width: 500px;
+            background-color: #bfa; */ 
+            margin-left: 600px;       
+        }
+        body:hover .box2{
+            margin-left: 600px;       
+        }
+        body:hover .box3{
+            margin-left: 600px;       
+        }
+        body:hover .box4{
+            margin-left: 600px;       
+        }
+        body:hover .box5{
+            margin-left: 600px;       
+        }
+        body:hover .box6{
+            margin-left: 600px;       
+        }
+        body:hover .box7{
+            margin-left: 600px;       
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">ease</div>
+    <div class="box2">linear</div>
+    <div class="box3">ease-in</div>
+    <div class="box4">ease-out</div>
+    <div class="box5">cubic-bezier</div>
+    <div class="box6">ease-end</div>
+    <div class="box7">steps(3)</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 400px;
+            width: 800px;
+            border: 10px red solid;
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: #bfa;
+            margin: auto;
+        }
+        /* 
+            可以将margin的值设为auto，设置为auto后，元素的外边距由浏览器自动计算
+
+            当我们将margin-left或margin-right中的一个设置为auto时，则浏览器会使其尽量的大
+                如果将margin-left和margin-right同时设置为auto，则浏览器会使元素左右的外边距相同，
+                也就是元素会在其父元素中水平居中
+            通过将一个块元素的左右外边距设置为auto，以使其在度元素中水平居中
+
+            默认情况下，垂直外边距设置为auto时，浏览器会自动取0为外边距
+
+
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+</html>

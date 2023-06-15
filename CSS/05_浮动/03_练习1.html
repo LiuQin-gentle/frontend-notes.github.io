@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;/* 去掉默认样式 */
+        }
+
+        ul{
+            list-style: none;/* 去掉ul中列表的默认样式 */
+        }
+
+        .nav{
+            width: 900px;
+            height: 40px;
+            background-color: #333;
+            margin: 100px auto;
+            line-height: 40px;
+        }
+        .nav li{
+            float: left;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .nav li:hover{
+            background-color: #646464;
+        }
+        .nav a{
+            display: block;/* 为了使a标签有高度，使得a超链接的范围变大，点击除了字以外的li也可以跳转*/
+            height: 40px;/* 这里不设置也可以 */
+            text-decoration: none;/* 去掉超链接默认样式的下划线*/
+            font-size: 18px;
+            font-weight: bold;/* 字体加粗 */
+            color: aliceblue;
+        }
+    </style>
+    <style>
+        
+    </style>
+<body>
+    <nav>
+        <ul class="nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">财经</a></li>
+            <li><a href="#">美妆</a></li>
+            <li><a href="#">娱乐</a></li>
+            <li><a href="#">美食</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

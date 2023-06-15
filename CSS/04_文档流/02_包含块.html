@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        包含块（containing block）
+            在文档流中，包含块就是离当前元素最近的祖先块元素
+     -->
+     <!-- box2的包含块是box1 -->
+     <div class="box1">
+        <div class="box2"></div>
+     </div>
+
+     <!-- box4的包含块是box3，而不是span 
+        如果设置box4高度为50%，则是相对于box3来说的-->
+     <div class="box3">
+        <span>
+            <div class="box4"></div>
+        </span>
+     </div>
+</body>
+</html>

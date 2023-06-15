@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+    <script>
+        /* 
+            转换为数值
+            1.调用Number()函数
+                字符串：
+                    字符串是合法数字——>对应的数字
+                    字符串不是合法数字——>NaN
+                    字符串是空串或者纯空格的字符串——>0
+                布尔值：
+                    true——>1
+                    false——>0
+                null——>0
+                undefined——>NaN
+            专门用来字符串转换为数值的两个方法
+                parseInt()——将一个字符串转换为一个整数
+                    解析时，会从左往右读取一个字符串，直到读取到字符串中所有的有效整数
+                parseFloat()——将一个字符串转换为浮点数
+                    解析时，会从左往右读取一个字符串，直到读取到字符串中所有的有效小数
+        */
+
+        let a = "10";
+        a = Number(a)
+        console.log(typeof a, a)
+
+        let b = "ab";
+        b = Number(b)
+        console.log(typeof b, b)
+
+        let c = "122"//122
+        c = "122px"//122
+        c = parseInt(c);
+        console.log(typeof c, c)
+
+        c = "12.45"
+        c = "12.45dd"//12.45
+        c = parseFloat(c);
+        console.log(typeof c, c)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

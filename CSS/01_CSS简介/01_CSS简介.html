@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css简介</title>
+    <!-- 
+        1.内部样式表
+        可以通过style标签来创建一个内部样式
+     -->
+     <!-- <style>
+        p{
+            color: red;
+            font-size: 40px;
+        }
+
+     </style> -->
+
+     <!-- 
+        3.外部样式表
+            将样式编写到css文件中,然后通过link标签引入外部样式
+            并且外部文件可以利用到浏览器的缓存机制，加快用户的访问速度
+      -->
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        2.内联样式表
+            可以直接将css编写到标签的style属性中
+        一个网页分为三个部分：结构、表现和行为 
+     -->
+     <p style="color: antiquewhite;">老阮不狂谁会得，出门一笑大江横</p>
+     <p>飞流直下三千尺，疑是银河落九天</p>
+</body>
+</html>

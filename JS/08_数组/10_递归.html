@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归</title>
+    <script>
+        /* 
+            递归函数的两个条件：
+                1.基线条件：递归的终止条件
+                2.递归条件：如何对问题进行拆分
+        */
+        let result = 1;
+         function jiecheng(num) {
+            if(num === 1){
+                return 1;
+            }
+            return num * jiecheng(num-1);
+         }
+         let result1 = jiecheng(3);
+         console.log(result1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

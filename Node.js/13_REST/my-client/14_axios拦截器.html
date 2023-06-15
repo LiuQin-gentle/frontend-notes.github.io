@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Axios拦截器</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <script>
+        axios.defaults.baseURL = "http://localhost:3000";
+
+        //axios的拦截器可以对请求或响应进行拦截，在请求发送前和响应接收前处理数据
+        //添加请求拦截器
+        axios.interceptors.request.use(
+            function (config) {
+                //console.log(config);
+                //config.data.name = "猪哈哈";
+                config.headers["Authorization"] = `Bearer ${localStorage.getItem("token")}`
+                //在发送请求之前做些什么
+                return config;
+            },
+            function (error) {
+                console.log(error);
+                //对请求错误做些什么
+                return Promise.reject(error);
+            }
+        )
+
+        // 添加响应拦截器
+        axios.interceptors.response.use(function (response) {
+            // 2xx 范围内的状态码都会触发该函数。
+            // 对响应数据做点什么
+            return response;
+        }, function (error) {
+            // 超出 2xx 范围的状态码都会触发该函数。
+            // 对响应错误做点什么
+            return Promise.reject(error);
+        });
+
+        //移除拦截器
+        // const myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+        // axios.interceptors.request.eject(myInterceptor);
+
+        // 给自定义的 axios 实例添加拦截器
+        // const instance = axios.create();
+        // instance.interceptors.request.use(function () {/*...*/});
+        
+        document.getElementById("btn").onclick = () => {
+            axios({
+                url: "student",
+                method: "get",
+                data: { name: "猪八戒" }
+            })
+            .then((res) => console.log(res.data))
+            .catch((err) => {
+                console.log("出错了", err)
+            })
+        }
+    </script>
+</body>
+</html>

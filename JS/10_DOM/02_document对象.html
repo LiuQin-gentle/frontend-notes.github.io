@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document对象</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+
+    <div class="div1">我是div</div>
+    <div class="div1">我是div</div>
+    <div class="div1">我是div</div>
+    <div class="div1">我是div</div>
+
+    <script>
+        /* 
+            document对象
+                -表示的是整个网页
+                -原型链：HTMLDocument -- Document -- Node -- EventTarget -- Object.prototype -- null
+                -凡是在原型链上存在的对象的属性和方法都可以通过document去调用
+                -部分属性：
+                    document.documentElement -- html根元素
+                    document.head -- head元素
+                    document.title -- title元素
+                    document.body -- body元素
+                    document.links -- 获取页面中所有的超链接
+            获取元素节点
+                1.通过document获取已有的元素节点
+                    document.getElementById()
+                        -根据id获取一个元素节点对象
+                    document.getElementsByClassName( )
+                        –根据元素的class属性值获取一组元素节点对象
+                        -返回的是一个类数组对象
+                        -该方法返回的结果是一个实时更新的集合
+                            当网页中新添加元素时，集合也会实时的刷新
+                    document.getElementsByTagName( )
+                        –根据标签名获取一组元素节点对象
+                        -返回的结果是可以实时更新的集合
+                    document.getElementsByTagName( "*")
+                        -获取页面中所有的元素
+                    document.getElementsByName( )
+                        -根据name属性获取一组元素节点对象
+                        -返回一个实时更新的集合
+                        -主要用于表单项
+                    document.querySelectorAll()
+                        -根据选择器去页面中查询元素
+                        -会返回一个类数组（不会实时更新)
+                    document.querySelector( )
+                        -根据选择器去页面中查询第一个符合条件的元素
+                2.创建一个元素节点
+                    document.createElement( )
+                        -根据标签名创建一个元素节点对象
+        */
+        const btn = document.getElementById("btn");
+        const divs = document.getElementsByClassName("div1");//HTMLCollection(4) [div.div1, div.div1, div.div1, div.div1]
+        const divs1 = document.getElementsByTagName("div");//HTMLCollection(4) [div.div1, div.div1, div.div1, div.div1]
+
+    </script>
+</body>
+</html>

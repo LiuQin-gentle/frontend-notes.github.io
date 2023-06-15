@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枚举属性</title>
+    <script>
+        /* 
+            枚举属性，指将对象中的所有属性全部获取
+
+            for-in语句
+            有几个数学就执行几次，每次执行都会将一个属性名赋值给所定义的变量
+            符号添加的属性不可枚举
+            */
+        let obj = {
+            name: '孙悟空',
+            age: 18,
+            ["gender"]: "男",
+            hello: {
+                a: 1,
+                b: "dd"
+            },
+            [Symbol()]: "看不到我"
+        }
+
+        for (let proName in obj) {
+            console.log(proName, obj[proName])
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

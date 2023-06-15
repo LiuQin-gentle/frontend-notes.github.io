@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相等运算符</title>
+    <script>
+        /* 
+            ==
+                相等运算符，用来比较两个值是否相等
+                比较两个不同类型的值时，将其转换为相同的类型（通常转换为数值）再比较
+                特殊情况：
+                    null和undefined比较返回true
+                    NaN不和任何值相等，包括自己
+
+            ===
+                全等运算符，用来比较两个值是否全等
+                不会进自动类型转换
+
+            !=
+                不等，会自动类型转换
+            !== 
+                不全等，不会自动类型转换
+
+        */
+        let result = 1 == 1;//true
+        result = 1 == '1';//true
+        result = null == undefined;//true
+        result = NaN == NaN;//false
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

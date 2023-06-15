@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浅拷贝和深拷贝</title>
+    <script>
+        /* 
+            浅拷贝的方法
+            1.slice()
+            2.. ...(展开运算符)
+                -可以将一个数组中的元素展开到另一个数组中或者作为函数的参数传递
+        */
+        const arr = ['孙悟空', '猪八戒', '沙和尚']
+        const arr2 = [...arr];
+        console.log(arr2);
+
+        /* 
+             3. 对象的复制
+                 - Object.assign(目标对象，被复制的对象)
+                 - 将被复制对象中的属性复制到目标对象里，并将目标对象返回
+        */
+        const obj = { name: '孙悟空', age: 18 }
+        const obj2 = {}
+        Object.assign(obj2, obj)
+        console.log(obj2)
+
+        /* 
+              4.可以使用展开运算符对对象进行复制
+        */
+        const obj3 = { address: '花果山', ...obj }//address属性会添加在之前
+        console.log(obj3)
+
+        const obj4 = { age: 29, ...obj }//添加的属性与复制的属性重名，取后面的属性
+        console.log(obj4)//这里age为18
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

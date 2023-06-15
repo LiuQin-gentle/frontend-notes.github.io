@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+        //接收两个参数：1.正则表达式 2.匹配模式
+        let reg = new RegExp("a", "i");
+
+        //也可以使用字面量来创建正则表达式： /正则/匹配模式
+        reg = /a/i
+
+        let result = reg.test("a");//true
+        result = reg.test("abc");//true
+        result = reg.test("bcabc");//true
+
+        /* 
+            1. 在正则表达式中大部分字符都可以直接写
+            2. | 表示或
+            3. [] 表示或（字符集）
+                [a-z]
+                [A-Z]
+                [a-zA-Z]
+                /[a-z]/i  i表示忽略大小写
+                [0-9] 任意数字
+            4. [^] 表示除了
+                [^x] 表示除了x
+            5. . 表示除了换行符以外的任意字符
+            6. 使用\作为转义字符
+        */
+        let re = /a|b/
+        result = reg.test("af");
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            transition: all 3s;
+            margin: 200px auto;
+        }
+
+        .box1:hover{
+            /* 
+                scaleX x轴缩放
+                scaleY y轴缩放
+                scale  x y 轴缩放
+                scaleZ  z轴缩放（需要3d下才能看出效果）
+            */
+            transform: scale(.1, .2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

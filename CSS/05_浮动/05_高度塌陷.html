@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            float: left;
+            border: 10px solid tomato;
+        }
+        .box2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+        /* 
+            在文档流中的元素，可以将其他元素的高度撑开
+            但是，当元素浮动会脱离文档流，无法撑开父元素的高度，导致父元素高度塌陷
+            父元素高度塌陷，导致其后的元素会自动上移，导致布局变得混乱
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

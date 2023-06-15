@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            background-color: antiquewhite;
+            border: 5px hotpink solid;
+            margin: 20px;
+            padding: 10px;
+
+        }
+        .div{
+            width: 300px;
+            height: 300px;
+            background-color: tomato;
+        }
+        /* 
+            内容区
+                width height
+                行内元素的大小被内容撑开，无法通过width和height来设置行内元素宽度高度
+            内边距
+                padding
+                行内元素可以设置内边距，但是垂直方向的内边距不会影响布局
+            边框
+                border
+                行内元素可以设置边框，但是垂直方向的边框不会影响页面的布局
+            外边距
+                margin
+                行内元素可以设置水平方向的外边距
+        */
+    </style>
+</head>
+<body>
+    <span>我是一个span</span>
+    <span>我是一个span</span>
+    <span>我是一个span</span>
+    <span>我是一个span</span>
+    <div class="div"></div>
+</body>
+</html>

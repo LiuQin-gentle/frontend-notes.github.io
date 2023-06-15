@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            float: left;
+            border: 10px solid tomato;
+        }
+        .box2{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            display: flow-root;
+        }
+        /* 
+            BFC(Block Formatting Context)
+                块级格式化环境
+                可以将BFC理解为一个隐藏属性，当开启BFC后元素会具备如下特征
+                    1. 子元素的垂直外边距不会传递给父元素
+                    2. 元素不会被浮动元素所覆盖
+                    3. 元素可以包含浮动的子元素
+            
+            如何开启BFC
+                需要用一些其他的样式来间接开启BFC
+                由于BFC是通过一些样式间接开启的，所有都会有一些副作用
+                例如
+                    1. 浮动会开启元素的BFC
+                    2. 将overflow设置为一个非visible的值
+                    3. display:flow-root//几乎没有副作用
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

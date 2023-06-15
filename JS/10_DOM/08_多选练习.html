@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const hobbyArr = document.getElementsByName("hobby");
+            
+            const allBtn = document.getElementById("all");
+            allBtn.onclick = function() {
+                for(let i=0; i<hobbyArr.length; i++){
+                    hobbyArr[i].checked = true;
+                }
+            }
+
+            const cancelAll = document.getElementById("cancel");
+            cancelAll.onclick = function() {
+                for(let i=0; i<hobbyArr.length; i++){
+                    if(hobbyArr[i].checked === true){
+                        hobbyArr[i].checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#">
+        <div>
+            请选择你的爱好
+            <div>
+                <input type="checkbox" name="hobby">足球
+                <input type="checkbox" name="hobby">蓝球
+                <input type="checkbox" name="hobby">羽毛球
+                <input type="checkbox" name="hobby">乒乓球
+            </div>
+
+            <div>
+                <button id="all">全选</button>
+                <button id="cancel">取消全选</button>
+                <button id="reverse">反选</button>
+                <button id="send">提交</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

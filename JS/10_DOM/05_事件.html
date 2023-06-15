@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. 直接在元素的属性中设置 -->
+    <button onclick="alert('点了我一下')">点我一下</button>
+    <button id="btn">点我</button>
+    <script>
+        const btn = document.getElementById("btn");
+        /* 
+            2.通过为元素的指定属性设置回调函数的形式来绑定事件（一个事件只能绑定一个响应函数）
+        */
+       //写两个事件时，后边的会覆盖前面的
+    //    btn.onclick=function(){
+    //     alert("aaa");
+    //    }
+    //    btn.onclick=function(){
+    //     alert("bbb");
+    //    }
+       
+       /* 
+            3.可以通过元素addEventListener()方法来绑定事件 
+       */
+      //三个弹窗会依次显示
+      btn.addEventListener("click", function(){
+        alert("哈哈哈");
+      });
+      btn.addEventListener("click", function(){
+        alert("嘻嘻嘻");
+      });
+      btn.addEventListener("click", function(){
+        alert("嘿嘿嘿");
+      });
+    </script>
+</body>
+</html>

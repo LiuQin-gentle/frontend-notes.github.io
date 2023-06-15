@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+    <script>
+        /* 
+            转换为字符串
+            1.调用toString方法
+                null和toString没有toString()方法
+            2.调用String函数
+                对于拥有toString()方法的值调用String()函数时，实际上就是在调用toString()方法
+                对于null，直接转换为"null"
+                对于undefined，直接转换为"undefined"
+        */
+
+        let a = 10;
+        let b = a.toString()//a.toString不会改变a的类型
+        console.log(typeof b)
+
+        let c = 123;
+        c = null;
+        c = undefined;
+        let d = String(c);
+        console.log(typeof d,d);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

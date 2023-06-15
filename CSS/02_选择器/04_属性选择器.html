@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        /* 
+            属性选择器
+            语法：
+                [属性名] 选中具有该属性的元素
+                [属性名=属性值] 选中指定属性值的元素
+                [属性名^=属性值] 选中属性值以指定内容开头的元素
+                [属性名$=属性值] 选中属性值以指定内容结尾的元素
+                [属性名*=属性值] 选中属性值包含指定内容的元素
+        */
+        [title]{
+            color: orange;
+        }
+
+        /* 交集选择器 */
+        div[title=hello]{
+            color: rgb(185, 34, 223);
+        }
+    </style>
+</head>
+<body>
+    <div title="hello">落霞与孤鹜齐飞</div>
+    <p title="hi">秋水共长天一色</p>
+    <p title="nihao">先天下之忧而忧</p>
+    <p>后天下之乐而乐</p>
+</body>
+</html>

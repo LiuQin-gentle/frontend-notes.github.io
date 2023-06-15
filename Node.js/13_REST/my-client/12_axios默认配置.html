@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Axios默认配置</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <script>
+        axios.defaults.baseURL = "http://localhost:3000";
+        axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`;
+        document.getElementById("btn").onclick = () => {
+            axios({
+                url:"student",
+                method:"get",
+                data:{
+                    name:"swk",
+                    age:18,
+                    gender:"男",
+                    address:"火锅山"
+                },
+    
+            }).then((res) => {
+                console.log(res.data);
+            }).catch((err) => {
+                console.log("出错了",err);
+            })
+        }
+    </script>
+</body>
+</html>

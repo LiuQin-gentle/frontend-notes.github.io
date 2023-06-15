@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click='count++'>点我一下</button> - 点了{{count}}次
+    </div>
+    <script>
+        const Root = {
+            data(){
+                return{
+                    count: 0
+                }
+            },
+            /* 
+                template是模板，它决定了组件最终的样子
+                定义模板的方式有三种：
+                    1. 在组件中通过template属性去指定
+                    2. 直接在网页的根元素中指定
+                    3. 组件中通过render()直接渲染
+
+            */
+            /* template:"<button @click='count++'>点我一下</button> - 点了{{count}}次" */
+        }
+        Vue.createApp(Root).mount("#app");
+    </script>
+</body>
+</html>

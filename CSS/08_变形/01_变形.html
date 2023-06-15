@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变形</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 300px;
+            background-color: skyblue;
+            position: absolute;
+            left: 50%;/* box1左侧与其包含块的中线对齐 （box1的包含块此时为body）*/
+            top:50%;/* box1上边与其包含块的中线对齐 */
+            transform: translateX(-50%) translateY(-50%);/* 再向左移动box1宽度的50%，向上移动box1高度的50%，实现居中的效果 */
+            /* 
+                transform设置变形
+                    需要通过不同的变形函数来实现元素的变形
+                        translateX() x轴平移
+                        translateY() y轴平移
+                            设置平移时，如果使用百分比单位，百分比是相对元素自身大小计算的
+                当我们对元素进行变形时，只会影响到元素自身，不会影响其他元素的位置
+            */
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

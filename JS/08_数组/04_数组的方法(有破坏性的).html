@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有破坏性的数组方法</title>
+    <script>
+        /* 
+            1.push() 在数组末尾添加任意多个值，然后返回数组的长度
+            2.pop() 删除数组的最后一项并返回它，数组长度减1
+        */
+        const arr = ['孙悟空', '猪八戒']
+        let count = arr.push('沙和尚', '唐僧');
+        console.log(count);//4
+        console.log(arr.pop())//'唐僧'
+        console.log(arr);
+
+        /*
+             3.unshift() 在数组开头添加任意多个值，然后返回数组的长度
+             4.shift() 删除数组的第一项并返回它，数组长度减1
+        */
+        const arr1 = ['孙悟空', '猪八戒']
+        let count1 = arr1.unshift('沙和尚', '唐僧');
+        console.log(count1);//4
+        console.log(arr1.shift())//'沙和尚'
+        console.log(arr1);
+
+        /* 
+            5.splice() 可以删除、添加、插入、替换数组中的元素
+                -参数
+                    1.删除的起始位置
+                    2.删除的数量
+                    3.要插入的元素
+                -返回值
+                    返回被删除的元素
+        */
+
+        const arr2 = ['孙悟空', '猪八戒', '沙和尚', '唐僧']
+        console.log(arr2.splice(1, 2, '牛魔王'))//['猪八戒', '沙和尚']
+        console.log(arr2);//['孙悟空', '牛魔王', '唐僧']
+
+        /* 
+            6.reverse() 反转数组
+        */
+       const arr3 = ['孙悟空', '猪八戒', '沙和尚', '唐僧']
+       console.log(arr3.reverse());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

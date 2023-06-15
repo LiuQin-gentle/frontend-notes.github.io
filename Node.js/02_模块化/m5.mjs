@@ -1,0 +1,1 @@
+console.log("我是m5，我是用CommonJS模块加载ES6模块");

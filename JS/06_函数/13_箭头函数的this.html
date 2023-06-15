@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的this</title>
+    <script>
+        /* 
+            箭头函数没有自己的this，它的this由外层作用域决定
+            箭头函数的this和它的调用方式无关
+        */
+       const fn2 = () =>{
+        console.log(this)
+       }
+       const obj = {
+        name: '孙悟空',
+        fn2,
+        sayHello(){
+            fn2()
+        }
+       }
+       console.log(obj.fn2());//window
+       console.log(obj.sayHello());//window
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

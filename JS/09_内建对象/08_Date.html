@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script>
+        /* 
+            在JS中所有的和时间相关的数据都由Date对象来表示                
+        */
+    
+        let d = new Date();//直接通过new Date() 创建时间对象时，创建的是当前的时间的对象
+        
+        //可以在Date()构造函数中，传递一个表示时间的字符串
+        //字符串格式为：月/日/年 时:分:秒
+        //年-月-日T时:分:秒
+        d = new Date("2023-03-23T09:46:01");
+        
+        //new Date(年份， 月， 日， 时， 分， 秒， 毫秒)
+        d = new Date(2023, 2, 23, 9, 48, 23, 12);//月份的值是0时，表示一月
+
+        //console.log(d);
+        
+        let result = d.getFullYear();
+        result = d.getMonth();//0-11
+        result = d.getDate();//返回当前是几号
+        result = d.getDay();//返回当前是周几（0-6）0表示周日
+
+        //返回当前的时间戳：自1970年1月1日0时0分0秒到当前时间所经历的毫秒数；计算机底层存储时间时，都是使用时间戳
+        result = d.getTime();
+
+        result = Date.now();//获取当前的时间戳
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

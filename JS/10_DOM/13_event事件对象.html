@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /* 
+            event对象
+            事件对象
+        */
+       const box = document.getElementById("box");
+       box.onmousemove = function(event){
+            console.log(event.clientX, event.clientY);
+            box.textContent = event.clientX + "," + event.clientY;
+       }
+    </script>
+</body>
+</html>

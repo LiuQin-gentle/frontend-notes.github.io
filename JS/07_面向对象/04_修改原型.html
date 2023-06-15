@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改原型</title>
+    <script>
+        /* 
+            1. instanceof检查对象的原型链上是否有该实例
+        */
+       class Animal{}
+       class Dog extends Animal{}
+       const dog = new Dog()
+       /* console.log(dog instanceof Dog)//true
+       console.log(dog instanceof Animal)//true
+       console.log(dog instanceof Object)//true */
+
+        /* 
+            2. in 无论属性在对象自身还是在原型中，都会返回true
+        */
+       class Person{
+        name = '孙悟空'
+        age = 18
+        sayHello() {
+            console.log('I am ', this.name)
+        }
+       }
+       const person = new Person()
+       console.log('name' in person)//true
+       console.log('sayHello' in person);//true
+
+       /* 
+            3. Object.hasOwn(对象，属性名) 检查一个对象的自身是否含有某个属性
+       */
+      console.log(Object.hasOwn(person, 'name'));//true
+      console.log(Object.hasOwn(person, 'sayHello'));//false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

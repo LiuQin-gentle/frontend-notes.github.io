@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td,
+        th {
+            font-size: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        caption {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn01">点我一下</button>
+    <button id="btn02">取消</button>
+    <button id="btn03">按钮3</button>
+    <script>
+        const btn01 = document.getElementById("btn01");
+        const btn02 = document.getElementById("btn02");
+        const btn03 = document.getElementById("btn03");
+        let controller;
+        btn01.onclick = () => {
+            //创建一个AbortController
+            controller = new AbortController();
+            /* setTimeout(() => {
+                controller.abort();
+            }, 3000); */
+
+            //终止请求
+            //点击按钮向test发送请求
+            fetch("http://localhost:3000/test", {
+                signal: controller.signal
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log("出错了！"));
+        }
+        btn02.onclick = () => {
+            //如果controller为空（false），则不执行&&后面的代码
+            //如果controller不为空（true），则执行&&后面的代码
+            controller && controller.abort();
+        }
+
+        btn03.onclick = async () => {
+            try {
+                const res = await fetch("http://localhost:3000/student");
+                const data =await res.json();
+                console.log(data);
+            } catch (error) {
+                console.log("出错了", error);
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装</title>
+    <script>
+        /* 
+            1.封装
+                如何确保数据的安全：
+                    -数据私有化：将需要保护的数据设置为私有，只能在类内部使用
+                    -提供setter和getter方法来开放对数据的操作
+                        好处：可以控制属性的读写权限；可以在方法中对属性的值进行验证
+        */
+        class Person {
+            #name;
+            #age;
+            #gender;
+            constructor(name, age, gender) {
+                this.#name = name;
+                this.#age = age;
+                this.#gender = gender;
+            }
+            sayHello() {
+                console.log('sayHello')
+            }
+            set name(name) {
+                this.#name = name
+            }
+            get name() {
+                return this.#name
+            }
+            set age(age) {
+                this.#age = age
+            }
+            get age() {
+                return this.#age
+            }
+            set gender(gender) {
+                this.#gender = gender
+            }
+            get gender() {
+                return this.#gender
+            }
+        }
+
+        const p1 = new Person('孙悟空', 18, '男');
+        p1.name = '猪八戒';
+        console.log(p1.gender);
+        console.log(p1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

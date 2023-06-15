@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX简介</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <button id="btn">点我加载数据</button>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.onclick = () => {
+            /* 
+                AJAX
+                    - A：异步    J：Javascript    A：和    X：xml
+                    - 异步的js和xml
+                    - 它的作用就是通过js向服务器发送请求来加载数据
+                    - xml是早期AJAX使用的数据格式
+                        <student>
+                            <name>孙悟空</name>
+                        </student>
+                    - 目前数据格式都用json
+                        {"name":"孙悟空"}
+                    - 可选择的方案：
+                        XMLHTTPRequest(xhr)
+                        Fetch
+                        Axios
+                CORS(跨域资源共享)
+                    - 跨域请求
+                        - 如果两个网站的完整域名不相同
+                            a网站：http://haha.com
+                            b网站：http://heihei.com
+                        - 跨域需要检查三个东西
+                            协议 域名 端口号
+                            三个只要有一个不同就算跨域
+                        - 当AJAX去发送跨域请求时，浏览器为了服务器的安全，会阻止JS读取到服务器的数据
+                    - 解决方案
+                        - 在服务器中设置一个允许跨域的头
+                            Access-Control-Allow-Origin
+                                允许哪些客户端访问我们的服务器
+            */
+           const xhr = new XMLHttpRequest();
+           xhr.open("GET","http://localhost:3000/student");
+           xhr.send();
+        }
+    </script>
+</body>
+</html>

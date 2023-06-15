@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            margin: 50px auto;
+            width: 889px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const prevBtn = document.getElementById("prev");
+            const nextBtn = document.getElementById("next");
+
+            //const img = document.querySelector("img");
+            //const img = document.getElementsByTagName("img")[0];
+            const img = document.getElementById("img");
+
+            const imgArr = [
+                "./images/1.webp",
+                "./images/2.jpg",
+                "./images/3.webp",
+                "./images/4.png",
+                "./images/5.png",
+                "./images/6.png"
+            ];
+
+            const num = document.getElementById("num");
+            const sum = document.getElementById("sum");
+
+            let current = 0;
+            num.textContent = current + 1;
+            sum.textContent = imgArr.length;
+            
+            nextBtn.onclick = function() {
+                current ++;
+                if(current > imgArr.length - 1){
+                    current = 0;
+                }
+                num.textContent = current + 1;
+                img.src = imgArr[current];
+            }
+
+            prevBtn.onclick = function(){
+                current --;
+                if(current < 0){
+                    current = imgArr.length - 1;
+                } 
+                num.textContent = current + 1;
+                img.src = imgArr[current];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">
+        当前是第<span id="num"></span>张,
+        共有<span id="sum"></span>张图 
+        <div class="img-wrapper">
+            <img id="img" src="./images/1.webp">
+        </div>
+        <div class="btn-wrapper">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </div>
+</body>
+</html>

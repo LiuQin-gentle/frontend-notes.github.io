@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       
+        ul{
+            display: flex; 
+            list-style: none;
+            width: 800px;
+            border: 3px red solid; 
+            flex-flow: row;
+        }
+
+        /* 
+            弹性子元素的样式（弹性项的样式）
+                flex-basis
+                    -弹性子元素的基础大小，会根据主轴的方向自动设置width或height
+                        主轴水平，设置宽度
+                        主轴垂直，设置高度  
+                    -可选值
+                        auto 默认值 以元素的width或height为准
+                
+                flex-shrink
+                    -弹性子元素的收缩系数
+                        当父元素容纳不下所有子元素时，如何自动缩小元素大小
+                    -元素的收缩是根据flex-basis和flex-shrink综合计算的
+                        收缩系数越大，元素基础大小越大，元素缩的越多
+                    -默认值为1，可以根据需要设置，如果设置为0则表示不收缩
+                
+                flex-grow
+                    -弹性子元素的生长系数
+                    -当容器中有富余空间时，如何分配到子元素
+                    -默认为0， 元素默认不会变大
+                
+                flex
+                    上述三个属性的简写属性
+                    属性顺序
+                        grow shrink basis
+                    可选值
+                        initial 默认值 0 1 auto  生长为0，不会变大；收缩为1；basis为auto
+                        auto 相当于 1 1 auto  生长为1；收缩为1；basis为auto
+                        none 相当于 0 0 auto 
+        */
+        li{
+            /* width: 100px; */
+            height: 100px;
+            line-height: 100px;
+            font-size: 50px;
+            color:#fff;
+            text-align: center;
+            /* flex-basis: auto;
+            flex-shrink: 1;
+            flex-grow: 0; */
+            flex: none;
+        }
+        
+        /* 弹性盒是CSS3中新添加的布局方式 */
+        li:nth-child(1){
+            background-color: skyblue;
+        }
+        li:nth-child(2){
+            background-color: tomato;
+        }
+        li:nth-child(3){
+            background-color: burlywood;
+        }
+        li:nth-child(4){
+            background-color: pink;
+        }
+        li:nth-child(5){
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+         </ul>
+   
+</body>
+</html>

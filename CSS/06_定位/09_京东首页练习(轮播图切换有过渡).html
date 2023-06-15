@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(244,244,244);
+        }
+        a{
+            text-decoration: none;   
+        }
+        ul{
+            list-style: none;
+        }
+        .outer{
+            width: 100%;
+            height: 31px;
+            background-color: rgb(227,228,229);
+        }
+        .outer .top{
+            position: relative;
+            margin: 0 auto;
+            width: 1190px;
+            height: 31px;
+            line-height: 31px;
+            display: flex;
+            justify-content: end;
+        }
+        .outer li{
+            height: 31px;
+            line-height: 31px;
+            margin-right: 15px;
+            text-align: center;
+        }
+        .top li:nth-child(1){
+            position: absolute;
+            left: 0;
+        }
+
+        .location-content{
+            z-index: 100;
+            position: absolute;
+            top: 30px;
+            width: 320px;
+            height: 460px;
+            background-color: white;
+            border: 1px solid rgba(204,204,204);
+            display: none;
+            box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+        }
+
+        .location-content a{
+            margin: 2px 15px;
+        }
+
+        .location:hover{
+            border-right: 1px solid rgba(204,204,204);
+            background-color: white;
+        }
+
+        .location:hover .location-content{
+            display: block;
+        }
+
+        .top li:nth-child(2) a:nth-child(2){
+            color: rgb(255,0,0);
+        }
+        .top li:nth-child(5) a{
+            color: rgb(255,0,0);
+        }
+        .outer .top span{
+            color: #CCCCCC;
+            margin-left: 5px;
+            font-size: 6px;
+        }
+        .outer .top a{
+            height: 31px;
+            line-height: 31px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #999;
+        }
+        .outer .top a:hover{
+            color: rgb(255,0,0);
+        }
+
+        
+        
+        /* 
+            header
+        */
+        header{
+            width: 100%;
+            height: 140px;
+            background-color: white;
+            display: flex;
+        }
+
+        header .content{
+            width: 1190px;
+            height: 140px;
+            margin: auto;
+            position: relative;
+        }
+        /* 
+           1. 狗的图片
+        */
+        header .icon{  
+            position: absolute;
+            width: 190px;
+            height: 120px;
+            margin: 0 auto;
+        }
+        #dog{
+            width: 190px;
+            height: 120px;
+        }
+        
+        /* 
+            2. 搜索框
+        */
+        header .center{
+            width: 810px;
+            height: 140px;
+            margin: 0 auto;
+        }
+        
+        .search1{      
+            width: 550px;
+            height: 36px;
+            display: block;
+            background-color: rgba(225,37,27);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        } 
+        .search1 input{
+            outline: none;/* 取消input的默认样式 */
+            display: block;
+            height: 32px;
+            width: 488px;
+            padding: 2px 44px 2px 17px;
+            border: 2px solid rgba(225,37,27);
+        }
+        .search1 .magnifier{
+            width: 58px;
+            height: 36px;
+            background-color: rgba(225,37,27);
+            text-align: center;
+            position: relative;
+            left: 494px;
+            bottom: 38px; 
+        }
+
+        .magnifier .magnifier-icon{
+            line-height: 32px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* 
+            3. 搜索框下的灰色小字
+        */
+        .search2{
+            width: 550px;
+            height: 20px;
+            line-height: 20px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 12px;
+            
+        }
+        .search2 a{
+            color: rgba(153,153,153);
+        }
+    
+        .search2 li{
+            margin-right: 8px;
+        }
+
+        .search2 li:hover{
+            color: rgba(200,22,35);
+            cursor: pointer;
+        }
+
+        /* 
+            4.灰色小字下的一排菜单
+        */
+        .search3{
+            display: flex;
+            width: 100%;
+            font-size: 15px;
+            justify-content: space-evenly;
+            margin-top: 25px;
+        }
+        .search3 a{
+            color: rgba(51,51,51);
+        }
+        .search3 li{
+            margin-right: 10px;
+        }
+
+        .search3 li:hover{
+            color: rgba(200,22,35);
+            cursor: pointer;
+        }
+        /* 
+            二维码
+        */
+        header .adv{ 
+            width: 190px; 
+            height: 140px;
+            position: absolute;  
+            right: 10px;
+            top: 20px;
+        }
+
+        .adv img{
+            width: 76px;
+            height: 76px;
+        }
+
+        
+        /* 
+            main
+        */
+        main{
+            top: 100px;
+            width: 1200px;
+            height: 470px;
+            display: flex;
+            margin: 10px auto;
+            background-color: rgba(244,244,244);
+        }
+
+        /* 
+            main > menu
+        */        
+        main .menu{
+            width: 190px;
+            height: 450px;
+            margin-right: 10px;
+            background-color: white;
+            flex: auto;
+            padding: 10px 0;
+        }
+
+        .menu > li{
+            height: 25px;
+            line-height: 25px;
+            padding-left: 18px;
+            background-color: white;
+        }
+
+        .menu li:hover{
+            background-color: rgba(217,217,217);
+        }
+        .menu a{
+            text-decoration: none;
+            font-size: 13px;
+            color: rgba(51,51,51);
+        }
+        .menu a:hover{
+            color: rgb(200,22,35);
+        }
+
+        .menu span{
+            font-size: 12px;
+            color: rgba(63,63,63);
+            padding: 0 2px;
+        }
+      
+        /* 
+            main > banner
+        */
+        main .banner{
+            width: 590px;
+            height: 100%;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .img-list li{
+            position: absolute;
+            width: 590px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }        
+
+        .img-list li.active{
+            opacity: 1;
+        }
+        .prev,.next{
+            position: absolute;
+            z-index: 99;
+            width: 25px;
+            height: 35px;
+            background-color: rgba(205, 205, 205, 0.6);
+            top: 0;
+            bottom: 0;
+            margin: auto 0;/* top:0;bottom:0;margin:auto 0 开启绝对定位的情况下，这三行让元素垂直居中*/
+            border: none;
+        }
+
+        .prev{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-right: 5px;
+        }
+        .next{
+            right: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding-left: 5px;
+        }
+
+        .next:hover{
+            background-color: rgba(118, 118, 118, 0.6);
+            cursor: pointer;
+        }
+        .prev:hover{
+            background-color: rgba(118, 118, 118, 0.6);
+            cursor: pointer;
+        }
+    
+        .slider_indicators{
+            position: absolute;
+            z-index: 99;
+            display: flex;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .slider_indicators li{
+            box-sizing: border-box;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 1px solid rgba(0,0,0,0.05);
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .slider_indicators li:hover{
+            outline: 3px solid rgba(0,0,0,.2);
+            background-color: white;
+        } 
+
+        .slider_indicators li.active{
+            outline: 5px solid rgba(0,0,0,.2);
+            background-color: white;
+        } 
+
+        /* 
+            main > goods
+        */
+        main .goods{
+            width: 190px;
+            height: 100%;
+            margin-right: 10px;
+            background-color: rgb(243, 161, 53);
+            flex: auto;
+        }
+
+        /* 
+            main > info
+        */
+        main .info{
+            width: 190px;
+            height: 100%;
+            background-color: rgb(240, 119, 64);
+            flex: auto;
+        }
+
+        /* 
+            footer
+        */
+        footer{
+            width: 1200px;
+            height: 100px;
+            background-color: gray;
+            margin: auto;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const lis = document.getElementsByClassName("slideshow-li");
+            const points = document.getElementsByClassName("slider_point_li");
+            let currentLi = 0;
+
+            function showLi(index){
+                lis[currentLi].classList.remove('active');
+                lis[index].classList.add('active');
+                
+                points[currentLi].classList.remove('active');
+                points[index].classList.add('active');
+
+                currentLi = index;
+            }
+
+            function nextLi() {
+                let index = (currentLi + 1) % lis.length;
+                showLi(index);
+            }
+
+            function preLi() {
+                let index = currentLi - 1;
+                if (index < 0) {
+                    index = lis.length - 1;
+                }
+                showLi(index);
+            }
+
+            setInterval(nextLi, 3000);
+
+            next.onclick = function() {
+                nextLi();
+            }
+
+            prev.onclick = function(){
+                preLi();
+            } 
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">    
+        <ul class="top">
+            <li class="location">
+                <a href="#">
+                    <svg t="1683527495132" class="icon-location" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2429" width="15" height="15"><path d="M512 64c-175.8 0-318.3 134.6-318.3 300.5 0 222.9 195.5 430.8 280.1 510.3 21.3 20.1 55.7 20.3 77.4 0.6 85.1-77.2 279.2-278.7 279.2-510.9C830.3 198.6 687.8 64 512 64z m0 401.1c-56.9 0-103.1-46.2-103.1-103.1S455.1 258.9 512 258.9c56.9 0 103.1 46.2 103.1 103.1S568.9 465.1 512 465.1z" p-id="2430" fill="#F10215"></path><path d="M364.5 926.5a147.5 21.5 0 1 0 295 0 147.5 21.5 0 1 0-295 0Z" p-id="2431" fill="#F10215"></path></svg>
+                    北京
+                </a>
+                <div class="location-content">
+                    <a href="#">北京</a>
+                    <a href="#">天津</a>
+                    <a href="#">上海</a>
+                    <a href="#">重庆</a>
+                    <a href="#">河北</a>
+                    <a href="#">山西</a>
+                    <a href="#">辽宁</a>
+                    <a href="#">吉林</a>
+                    <a href="#">黑龙江</a>
+                    <a href="#">江苏</a>
+                    <a href="#">浙江</a>
+                    <a href="#">安徽</a>
+                    <a href="#">福建</a>
+                    <a href="#">江西</a>
+                    <a href="#">山东</a>
+                    <a href="#">河南</a>
+                    <a href="#">湖北</a>
+                    <a href="#">湖南</a>
+                    <a href="#">广东</a>
+                    <a href="#">海南</a>
+                    <a href="#">四川</a>
+                    <a href="#">贵州</a>
+                    <a href="#">云南</a>
+                    <a href="#">陕西</a>
+                    <a href="#">甘肃</a>
+                    <a href="#">青海</a>
+                    <a href="#">台湾</a>
+                    <a href="#">内蒙古</a>
+                    <a href="#">广西</a>
+                    <a href="#">西藏</a>
+                    <a href="#">宁夏</a>
+                    <a href="#">新疆</a>
+                    <a href="#">港澳</a>
+                    <a href="#">钓鱼岛</a>
+                    <a href="#">海外</a>
+                    <hr>
+                    <h5>地区专享版</h5>
+                    <a href="#">中國港澳</a>
+                    <a href="#">中國台灣</a>
+                    <a href="#">京东全球</a>
+                    <hr>
+                    <h5>Available Sites</h5>
+                    <a href="#">Сайт России</a>
+                    <a href="#">Situs Indonesia</a>
+                    <a href="#">Sitio de España</a>
+                    <a href="#">เว็บไซต์ประเทศไทย</a>
+                </div>
+
+            </li>
+            <li>
+                <a href="#">你好，请登录</a>&nbsp;
+                <a class="register" href="#">免费注册</a><span>|</span>
+            </li>
+            <li><a href="#">我的订单</a><span>|</span></li>
+            <li>
+                <a href="#">我的京东</a>
+                <svg t="1683527652133" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3559" width="8" height="8"><path d="M806.4 319.2L512 613.6 221.6 323.2 176 368l290.4 290.4L512 704l45.6-45.6 294.4-294.4z" p-id="3560" fill="#999999"></path></svg>
+                <span>|</span>
+            </li>
+            <li>
+                <a href="#">企业采购</a>
+                <svg t="1683527652133" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3559" width="8" height="8"><path d="M806.4 319.2L512 613.6 221.6 323.2 176 368l290.4 290.4L512 704l45.6-45.6 294.4-294.4z" p-id="3560" fill="#999999"></path></svg>
+                <span>|</span>
+            </li>
+            <li>
+                <a href="#">商家服务</a>
+                <svg t="1683527652133" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3559" width="8" height="8"><path d="M806.4 319.2L512 613.6 221.6 323.2 176 368l290.4 290.4L512 704l45.6-45.6 294.4-294.4z" p-id="3560" fill="#999999"></path></svg>
+                <span>|</span>
+            </li>
+            <li>
+                <a href="#">网站导航</a>
+                <svg t="1683527652133" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3559" width="8" height="8"><path d="M806.4 319.2L512 613.6 221.6 323.2 176 368l290.4 290.4L512 704l45.6-45.6 294.4-294.4z" p-id="3560" fill="#999999"></path></svg>
+                <span>|</span>
+            </li>
+            <li>
+                <a href="#">手机京东</a>
+                <span>|</span>
+            </li>
+            <li>
+                <a href="#">网站无障碍</a>
+            </li>
+        </ul>
+    </div>
+    <header>
+        <div class="content">
+            <div class="icon">
+                <img id="dog" src="./img/icon.png">
+            </div>
+            <div class="center">
+                <div class="search1">
+                    <input class="input" type="text" placeholder="请输入关键字">
+                    <div class="magnifier">
+                        <a href="#">
+                            <svg t="1683362819130" class="magnifier-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2628" width="22" height="22">
+                                <path d="M933.602 831.47 721.175 617.262c-2.472-2.479-5.204-4.372-7.813-6.435 35.884-55.518 56.836-121.647 56.836-192.878 0-195.694-157.298-354.31-351.461-354.31-194.054 0-351.461 158.616-351.461 354.31 0 195.722 157.407 354.302 351.461 354.302 70.631 0 136.303-21.179 191.459-57.361 2.009 2.692 3.852 5.369 6.283 7.827l212.454 214.235c14.506 14.579 33.396 21.849 52.314 21.849 18.932 0 37.836-7.268 52.328-21.814C962.436 907.824 962.436 860.61 933.602 831.47M418.737 660.37c-132.562 0-240.468-108.767-240.468-242.421 0-133.634 107.907-242.428 240.468-242.428 132.561 0 240.467 108.794 240.467 242.428C659.204 551.602 551.298 660.37 418.737 660.37" fill="#ffffff" p-id="2629"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <ul class="search2">
+                    <li><a href="#">荣耀上新</a></li>
+                    <li><a href="#">iPhone14</a></li>
+                    <li><a href="#">热卖潮品</a></li>
+                    <li><a href="#">品质装修</a></li>
+                    <li><a href="#">京东买药</a></li>
+                    <li><a href="#">任天堂</a></li>
+                </ul>
+                <ul class="search3">
+                    <li><a href="#">京东家电</a></li>
+                    <li><a href="#">进口好物</a></li>
+                    <li><a href="#">京东五金城</a></li>
+                    <li><a href="#">PLUS会员</a></li>
+                    <li><a href="#">拍卖</a></li>
+                    <li><a href="#">京东超市</a></li>
+                    <li><a href="#">便宜包邮</a></li>
+                    <li><a href="#">京东生鲜</a></li>
+                    <li><a href="#">电脑数码</a></li>
+                    <li><a href="#">秒杀</a></li>
+                </ul>
+            </div>
+            <div class="adv">
+                <img src="./img/erweima.png">
+            </div>
+        </div>
+    </header>
+    <main>
+        <ul class="menu">
+            <li>
+                <a href="#">家用电器</a>
+            </li>
+            <li>
+                <a href="#">手机</a><span>/</span>
+                <a href="#">运营商</a><span>/</span>
+                <a href="#">数码</a>
+            </li>
+            <li>
+                <a href="#">电脑</a><span>/</span>
+                <a href="#">办公</a>
+            </li>
+            <li>
+                <a href="#">家居</a><span>/</span>
+                <a href="#">家具</a><span>/</span>
+                <a href="#">家装</a><span>/</span>
+                <a href="#">厨具</a>
+            </li>
+            <li>
+                <a href="#">男装</a><span>/</span>
+                <a href="#">女装</a><span>/</span>
+                <a href="#">童装</a><span>/</span>
+                <a href="#">内衣</a>
+            </li>
+            <li>
+                <a href="#">美妆</a><span>/</span>
+                <a href="#">个护清洁</a><span>/</span>
+                <a href="#">宠物</a>
+            </li>
+            <li>
+                <a href="#">女鞋</a><span>/</span>
+                <a href="#">箱包</a><span>/</span>
+                <a href="#">钟表</a><span>/</span>
+                <a href="#">珠宝</a>
+            </li>
+            <li>
+                <a href="#">男鞋</a><span>/</span>
+                <a href="#">运动</a><span>/</span>
+                <a href="#">户外</a>
+            </li>
+            <li>
+                <a href="#">房产</a><span>/</span>
+                <a href="#">汽车</a><span>/</span>
+                <a href="#">汽车用品</a>
+            </li>
+            <li>
+                <a href="#">母婴</a><span>/</span>
+                <a href="#">玩具乐器</a>
+            </li>
+            <li>
+                <a href="#">食品</a><span>/</span>
+                <a href="#">酒类</a><span>/</span>
+                <a href="#">生鲜</a><span>/</span>
+                <a href="#">特产</a>
+            </li>
+            <li>
+                <a href="#">艺术</a><span>/</span>
+                <a href="#">礼品鲜花</a><span>/</span>
+                <a href="#">农牧园艺</a>
+            </li>
+            <li>
+                <a href="#">医药保健</a><span>/</span>
+                <a href="#">计生情趣</a>
+            </li>
+            <li>
+                <a href="#">图书</a><span>/</span>
+                <a href="#">文娱</a><span>/</span>
+                <a href="#">教育</a><span>/</span>
+                <a href="#">电子书</a>
+            </li>
+            <li>
+                <a href="#">机票</a><span>/</span>
+                <a href="#">酒店</a><span>/</span>
+                <a href="#">旅游</a><span>/</span>
+                <a href="#">生活</a>
+            </li>
+            <li>
+                <a href="#">支付</a><span>/</span>
+                <a href="#">白条</a><span>/</span>
+                <a href="#">保险</a><span>/</span>
+                <a href="#">企业金融</a>
+            </li>
+            <li>
+                <a href="#">安装</a><span>/</span>
+                <a href="#">维修</a><span>/</span>
+                <a href="#">清洗</a><span>/</span>
+                <a href="#">二手</a>
+            </li>
+            <li>
+                <a href="#">工业品</a><span>/</span>
+                <a href="#">元器件</a>
+            </li>
+        </ul>
+        <div class="banner">
+            <ul class="img-list">
+                <li class="slideshow-li active">
+                    <a href="#">
+                        <img id="img" src="./img/1.png">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/2.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/3.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/4.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/5.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/6.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/7.jpg">
+                    </a>  
+                </li>
+                <li class="slideshow-li">
+                    <a href="#">
+                        <img id="img" src="./img/8.jpg">
+                    </a>  
+                </li>
+            </ul>
+            <div class="prev-next">
+                <button class="prev" id="prev"><svg t="1683339148431" class="arrow-left" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1742" width="10" height="35"><path d="M750.628571 0L822.857143 68.827429 357.778286 512 822.857143 955.172571 750.628571 1024 213.321143 512z" fill="#ffffff" p-id="1743"></path></svg></button>
+                <button class="next" id="next"><svg t="1683339183588" class="arrow-right" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1889" width="10" height="35"><path d="M285.549714 0L213.321143 68.827429 678.4 512 213.321143 955.172571 285.549714 1024 822.857143 512z" fill="#ffffff" p-id="1890"></path></svg></button>
+            </div>
+            <ul class="slider_indicators">
+                <li class="slider_point_li active"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+                <li class="slider_point_li"></li>
+            </div>
+        </div>
+        <div class="goods">商品</div>
+        <div class="info">信息</div>
+    </main>
+    <footer></footer>
+</body>
+</html>

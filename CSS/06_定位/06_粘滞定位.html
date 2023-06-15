@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 4000px;
+        }
+        .box1{
+            width: 1200px;
+            height: 40px;
+            background-color: tomato;
+            margin: 100px auto;
+            /* 
+                将元素的position设置sticky则开启了元素的粘滞定位
+                    粘滞定位的特点与相对定位类似
+                定位参照物
+                    粘滞定位相对于离它最近的拥有滚动条祖先元素来定位的
+            */
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur placeat dignissimos explicabo magnam praesentium, quia ipsum quas pariatur minus error distinctio deleniti provident quae, impedit nesciunt architecto doloribus facilis? Ex.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur placeat dignissimos explicabo magnam praesentium, quia ipsum quas pariatur minus error distinctio deleniti provident quae, impedit nesciunt architecto doloribus facilis? Ex.</p>
+</body>
+</html>

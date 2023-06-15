@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的方法（函数作为参数）</title>
+    <script>
+        /*
+            1.sort() 数组排序（会改变原数组）
+                默认升序
+                默认按照Unicode编码进行排序，如果对数字直接排序，可能会得到不正确的结果
+                参数：可以传递一个回调函数作为参数，通过回调函数来指定排序规则
+                    (a, b) => a - b 升序排列
+                    (a, b) => b - a 降序排列
+        */
+        let arr = ['f', 'b', 'a', 'd', 'c', 'e'];
+        //console.log(arr.sort());
+
+        let arr1 = [3, 6, 7, 8, 1, 2, 4, 10, 23];
+        //console.log(arr1.sort());// [1, 10, 2, 23, 3, 4, 6, 7, 8] 返回错误的结果
+
+        arr1.sort((a, b) => a - b);
+        //console.log(arr1);//[1, 2, 3, 4, 6, 7, 8, 10, 23]  升序排列
+
+        arr1.sort((a, b) => b - a);
+        //console.log(arr1);//[23, 10, 8, 7, 6, 4, 3, 2, 1]  降序排列
+
+        /* 
+            2.foreach() 遍历数组
+                需要一个回调函数作为参数，这个回调函数会被调用很多次
+                    数组中有几个元素，回调函数就会调用几次
+                    每次调用，都会将数组中的数据作为参数传递
+                回调函数中有三个参数(可以只写前两个参数，也可以只写第一个参数)
+                    element 当前的元素
+                    index 当前元素的索引
+                    array 被遍历的数组
+        */
+        let arr2 = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+        arr2.forEach((element, index, array) => {
+            console.log(element);
+            console.log(index);
+            console.log(array);
+        });
+
+        /* 
+            3.filter() 将数组中符合条件的元素保存到一个新的数组中返回
+                需要一个回调函数作为参数，会为每一个元素去调用回调函数，并根据返回值来决定是否将元素添加到新数组中
+                非破坏性方法，不会影响原数组
+        */
+        let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let newArr = arr3.filter(element => element % 2 === 0);
+        console.log(newArr);// [2, 4, 6, 8, 10]  返回偶数
+
+        /* 
+            4.map() 根据当前数组生成一个新数组
+                需要一个回调函数作为参数，回调函数的返回值会成为新数组中的元素
+                非破坏性方法，不会影响原数组
+        */
+        newArr = arr3.map(element => element ** 2);//[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] 原数组每个数的平方
+        console.log(newArr);
+
+        /*
+            5.reduce() 用来将数组中的所有元素整合为一个值
+                参数：
+                    1.回调函数，通过回调函数来指定合并的规则
+                    2.可选参数，初始值
+        */
+       console.log(arr3.reduce((a, b) => a + b));//55
+       console.log(arr3.reduce((a, b) => a + b, 10));//65
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

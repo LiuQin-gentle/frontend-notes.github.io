@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 的类和 ES5 的构造函数有什么区别</title>
+    <script> 
+        //ES5构造函数
+        function Person(name){
+            this.name = name
+        }
+         
+        //ES6类 
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+        }
+
+        /* 
+            对于简单的构造函数而言，看起来很相似
+        */
+//======================================================================================
+        /* 
+            主要区别体现在类继承上
+        */
+       //ES5构造函数
+        function Student(name, studentId){
+            //调用父类的构造函数来初始化父类的成员变量
+            Person.call(this, name)
+
+            //初始化子类自己的成员变量
+            this.studentId = studentId
+        }
+        //设置子类的原型对象
+        Student.prototype = Object.create(Person.prototype)
+        Student.prototype.constructor = Student
+        
+
+       //ES6类 
+       class Student1 extends Person{
+            constructor(name, studentId){
+                super(name)
+                this.studentId = studentId;
+            }
+       }
+    </script>
+        
+        
+    
+
+</head>
+<body>
+    
+</body>
+</html>
