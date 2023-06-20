@@ -9,6 +9,8 @@ export default {
 
     //在组件中注册子组件
     components: {
+        //MB: MyButton
+        //"my-button": MyButton
         MyButton
     },
     /* 

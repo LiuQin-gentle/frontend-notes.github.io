@@ -1,3 +1,4 @@
+<!-- 安装个插件，Vue Language Features -->
 <script>
 import MyButton from './components/MyButton.vue';
     /* 编写组件的代码 */
@@ -8,13 +9,12 @@ import MyButton from './components/MyButton.vue';
             }
         },
         components:{
-            "my-button":MyButton
+            MyButton
         }
     }
 </script>
 
 <template>
     <h1>{{message}}</h1>
-    <my-button></my-button>
-    <my-button></my-button>
+    <MyButton></MyButton>
 </template>
