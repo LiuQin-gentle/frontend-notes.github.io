@@ -8,12 +8,13 @@ import MyButton from './components/MyButton.vue';
             }
         },
         components:{
-            MyButton
+            "my-button":MyButton
         }
     }
 </script>
 
 <template>
     <h1>{{message}}</h1>
-    <MyButton></MyButton>
+    <my-button></my-button>
+    <my-button></my-button>
 </template>
