@@ -11,6 +11,7 @@ import App from './App.vue'
 const app = createApp(App)
 const vm = app.mount('#app')
 
+//模块是单独运行在一个独立的作用域中的
 //在控制台不能直接访问到vm，因为此时vm变量不是全局变量
 //console.log(vm);
 

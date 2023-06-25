@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        const _proxy = (object,...prototypes) => {  
+            return new Proxy(object, {
+                get(object, prop){
+                    if(prototypes.indexOf(prop) === -1){
+                        return object[prop];
+                    }else{
+                        return "noright";
+                    }
+                }
+            }) 
+            
+        }
+
+        function test() {
+            let me = _proxy({ name: "me", age: 1, from: "china" }, "age", "from");
+                return me.name === "me" && me.age === "noright" && me.from === "noright";
+        }
+        console.log(test()); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
